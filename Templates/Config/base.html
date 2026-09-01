@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Spaco Contábil</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header> 
+
+        <a href="{{ url_for('home.home') }}">
+            <img src="{{ url_for('static', filename='img/logo-header.png') }}" alt="Logo da Spaco Contábil" class="logo-header">
+        </a>
+        
+        <nav class="menu">
+            <div class="menu-info">
+                <a href="#">Home</a>
+                <a href="#">Serviços</a>
+                <a href="#">Sobre</a>
+                <a href="#">Contato</a>
+            </div>
+            <div class="menu-login">
+                <a href="#">Login
+                    <i class="fa-solid fa-arrow-right-to-bracket" style="color: #FFD700;"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    {% block conteudo %}{% endblock %}
+
+    <footer>
+        <p>&copy; 2024 Spaco Contábil. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/carrossel.js') }}"></script>
+
+</body>
