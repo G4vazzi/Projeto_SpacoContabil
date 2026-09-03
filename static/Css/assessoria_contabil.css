@@ -1,0 +1,1210 @@
+/* =========================
+   ASSESSORIA CONTÁBIL
+========================= */
+
+
+/* =========================
+   HERO
+========================= */
+
+.assessoria-hero {
+
+    min-height: 650px;
+
+    padding: 80px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 70px;
+
+    background: #F5F9FF;
+
+    box-sizing: border-box;
+}
+
+
+.assessoria-hero-texto {
+
+    width: 55%;
+
+    max-width: 680px;
+}
+
+
+.assessoria-tag {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background: #0B3B91;
+
+    color: #FFD700;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.assessoria-hero h1 {
+
+    margin: 0 0 25px;
+
+    font-size: 52px;
+
+    line-height: 1.12;
+
+    color: #0B3B91;
+}
+
+
+.assessoria-hero h1 span {
+
+    display: block;
+
+    color: #111;
+}
+
+
+.assessoria-hero p {
+
+    max-width: 620px;
+
+    margin: 0 0 35px;
+
+    color: #555;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* BOTÕES */
+
+.assessoria-botoes {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.assessoria-btn-principal {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 24px;
+
+    border-radius: 12px;
+
+    background: #FFD700;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+
+.assessoria-btn-principal:hover {
+
+    background: #FFF4B8;
+
+    transform: translateY(-3px);
+}
+
+
+.assessoria-btn-secundario {
+
+    padding: 13px 23px;
+
+    border: 2px solid #0B3B91;
+
+    border-radius: 12px;
+
+    color: #0B3B91;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+
+.assessoria-btn-secundario:hover {
+
+    background: #0B3B91;
+
+    color: white;
+}
+
+
+/* =========================
+   PAINEL HERO
+========================= */
+
+.assessoria-hero-painel {
+
+    width: 38%;
+
+    max-width: 400px;
+
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    background: #0B3B91;
+
+    border-radius: 25px;
+
+    color: white;
+
+    box-shadow: 0 20px 50px rgba(11, 59, 145, 0.25);
+
+    transform: rotate(-2deg);
+}
+
+
+.painel-topo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.painel-icone {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #FFD700;
+
+    color: #0B3B91;
+
+    font-size: 23px;
+}
+
+
+.painel-topo small {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #FFD700;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.painel-topo strong {
+
+    display: block;
+
+    font-size: 18px;
+}
+
+
+.painel-linha {
+
+    height: 1px;
+
+    margin: 30px 0;
+
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+.painel-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+
+    color: #E7EEF9;
+
+    font-size: 15px;
+}
+
+
+.painel-item:last-child {
+
+    margin-bottom: 0;
+}
+
+
+.painel-item i {
+
+    width: 23px;
+
+    height: 23px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #FFD700;
+
+    color: #0B3B91;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.assessoria-titulo {
+
+    max-width: 760px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+.assessoria-titulo > span,
+.assessoria-solucoes-texto > span,
+.assessoria-beneficios-texto > span,
+.assessoria-cta span {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #0B3B91;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+.assessoria-titulo h2 {
+
+    margin: 0 0 15px;
+
+    color: #0B3B91;
+
+    font-size: 38px;
+
+    line-height: 1.2;
+}
+
+
+.assessoria-titulo p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PROBLEMAS
+========================= */
+
+.assessoria-problemas {
+
+    padding: 100px 8%;
+
+    background: white;
+}
+
+
+.problemas-grid {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.problema-card {
+
+    position: relative;
+
+    padding: 35px 30px;
+
+    border: 1px solid #E4EAF2;
+
+    border-radius: 20px;
+
+    transition: all 0.3s ease;
+}
+
+
+.problema-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #FFD700;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.problema-numero {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 25px;
+
+    color: #DCE6F5;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.problema-card > i {
+
+    width: 55px;
+
+    height: 55px;
+
+    margin-bottom: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #FFF4B8;
+
+    color: #0B3B91;
+
+    font-size: 22px;
+}
+
+
+.problema-card h3 {
+
+    margin: 0 0 12px;
+
+    color: #0B3B91;
+
+    font-size: 20px;
+}
+
+
+.problema-card p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   SOLUÇÕES
+========================= */
+
+.assessoria-solucoes {
+
+    padding: 100px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 80px;
+
+    background: #F5F9FF;
+}
+
+
+.assessoria-solucoes-texto {
+
+    width: 42%;
+
+    max-width: 500px;
+}
+
+
+.assessoria-solucoes-texto h2 {
+
+    margin: 0 0 20px;
+
+    color: #0B3B91;
+
+    font-size: 38px;
+
+    line-height: 1.2;
+}
+
+
+.assessoria-solucoes-texto p {
+
+    margin: 0 0 25px;
+
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+.assessoria-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #0B3B91;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+.assessoria-link:hover {
+
+    color: #174FAA;
+}
+
+
+.solucoes-lista {
+
+    width: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+.solucao-item {
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    background: white;
+
+    border: 1px solid #E4EAF2;
+
+    border-radius: 16px;
+
+    transition: all 0.3s ease;
+}
+
+
+.solucao-item:hover {
+
+    transform: translateX(6px);
+
+    border-color: #FFD700;
+}
+
+
+.solucao-icone {
+
+    width: 50px;
+
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #FFF4B8;
+
+    color: #0B3B91;
+
+    font-size: 19px;
+}
+
+
+.solucao-item h3 {
+
+    margin: 0 0 7px;
+
+    color: #0B3B91;
+
+    font-size: 18px;
+}
+
+
+.solucao-item p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ÁREAS
+========================= */
+
+.assessoria-areas {
+
+    padding: 100px 8%;
+
+    background: white;
+}
+
+
+.areas-grid {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.area-card {
+
+    padding: 30px 22px;
+
+    border-radius: 18px;
+
+    border: 1px solid #E4EAF2;
+
+    transition: all 0.3s ease;
+}
+
+
+.area-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #FFD700;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+
+.area-card > i {
+
+    width: 52px;
+
+    height: 52px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #0B3B91;
+
+    color: #FFD700;
+
+    font-size: 21px;
+}
+
+
+.area-card h3 {
+
+    margin: 0 0 10px;
+
+    color: #0B3B91;
+
+    font-size: 18px;
+}
+
+
+.area-card p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PROCESSO
+========================= */
+
+.assessoria-processo {
+
+    padding: 100px 8%;
+
+    background: #F5F9FF;
+}
+
+
+.processo-wrapper {
+
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+.processo-etapa {
+
+    width: 29%;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border: 1px solid #E4EAF2;
+}
+
+
+.processo-numero {
+
+    width: 50px;
+
+    height: 50px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #FFD700;
+
+    color: #0B3B91;
+
+    font-weight: bold;
+}
+
+
+.processo-conteudo h3 {
+
+    margin: 0 0 10px;
+
+    color: #0B3B91;
+
+    font-size: 19px;
+}
+
+
+.processo-conteudo p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.processo-seta {
+
+    color: #0B3B91;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   BENEFÍCIOS
+========================= */
+
+.assessoria-beneficios {
+
+    padding: 100px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 80px;
+
+    background: white;
+}
+
+
+.beneficios-imagem {
+
+    width: 43%;
+
+    min-height: 400px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 25px;
+
+    background: #0B3B91;
+}
+
+
+.beneficio-destaque {
+
+    width: 270px;
+
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+.beneficio-destaque > i {
+
+    width: 55px;
+
+    height: 55px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #FFD700;
+
+    color: #0B3B91;
+
+    font-size: 22px;
+}
+
+
+.beneficio-destaque strong {
+
+    display: block;
+
+    color: #0B3B91;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+}
+
+
+.beneficio-destaque strong span {
+
+    display: block;
+
+    color: #111;
+}
+
+
+.beneficio-destaque p {
+
+    margin: 15px 0 0;
+
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+.beneficios-texto {
+
+    width: 48%;
+
+    max-width: 550px;
+}
+
+
+.beneficios-texto h2 {
+
+    margin: 0 0 20px;
+
+    color: #0B3B91;
+
+    font-size: 38px;
+
+    line-height: 1.2;
+}
+
+
+.beneficios-texto > p {
+
+    margin: 0 0 25px;
+
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+.beneficios-lista {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.beneficios-lista div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #333;
+
+    font-weight: 600;
+}
+
+
+.beneficios-lista i {
+
+    width: 25px;
+
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #FFF4B8;
+
+    color: #0B3B91;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.assessoria-cta {
+
+    max-width: 1200px;
+
+    margin: 80px auto;
+
+    padding: 55px 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    box-sizing: border-box;
+
+    border-radius: 25px;
+
+    background: #0B3B91;
+}
+
+
+.assessoria-cta > div {
+
+    max-width: 700px;
+}
+
+
+.assessoria-cta span {
+
+    color: #FFD700;
+}
+
+
+.assessoria-cta h2 {
+
+    margin: 10px 0;
+
+    color: white;
+
+    font-size: 32px;
+
+    line-height: 1.2;
+}
+
+
+.assessoria-cta p {
+
+    margin: 0;
+
+    color: #DCE6F5;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .areas-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .assessoria-hero {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .assessoria-hero-texto,
+    .assessoria-hero-painel {
+
+        width: 100%;
+    }
+
+
+    .assessoria-hero p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .assessoria-botoes {
+
+        justify-content: center;
+    }
+
+
+    .assessoria-solucoes,
+    .assessoria-beneficios {
+
+        flex-direction: column;
+    }
+
+
+    .assessoria-solucoes-texto,
+    .solucoes-lista,
+    .beneficios-imagem,
+    .beneficios-texto {
+
+        width: 100%;
+
+        max-width: 700px;
+    }
+
+
+    .processo-wrapper {
+
+        flex-direction: column;
+    }
+
+
+    .processo-etapa {
+
+        width: 100%;
+
+        max-width: 500px;
+    }
+
+
+    .processo-seta {
+
+        transform: rotate(90deg);
+    }
+
+
+    .assessoria-cta {
+
+        margin: 50px 20px;
+
+        padding: 40px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .assessoria-hero {
+
+        min-height: auto;
+
+        padding: 65px 6%;
+    }
+
+
+    .assessoria-hero h1 {
+
+        font-size: 38px;
+    }
+
+
+    .assessoria-hero-painel {
+
+        transform: none;
+    }
+
+
+    .problemas-grid,
+    .areas-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .assessoria-titulo h2,
+    .assessoria-solucoes-texto h2,
+    .beneficios-texto h2 {
+
+        font-size: 30px;
+    }
+
+
+    .assessoria-cta h2 {
+
+        font-size: 27px;
+    }
+
+}

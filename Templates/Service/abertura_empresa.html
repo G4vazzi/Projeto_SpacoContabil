@@ -1,0 +1,396 @@
+{% extends "Config/base.html" %}
+
+{% block css%}
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/abertura_empresa.css') }}">
+
+{% endblock %}
+
+{% block conteudo %}
+
+<!-- =========================
+     HERO - ABERTURA DE EMPRESA
+========================= -->
+
+<section class="produto-hero">
+
+    <div class="produto-hero-conteudo">
+
+        <span class="produto-tag">
+            ABERTURA DE EMPRESA
+        </span>
+
+        <h1>
+            Abra sua empresa do jeito certo
+            <span>desde o primeiro passo.</span>
+        </h1>
+
+        <p>
+            Tire seu projeto do papel sem se preocupar com a burocracia.
+            A Spaco Contábil cuida de todo o processo para que você
+            comece seu negócio com segurança e tranquilidade.
+        </p>
+
+        <div class="produto-botoes">
+
+            <a href="#" class="produto-btn-principal">
+                Quero abrir minha empresa
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#como-funciona" class="produto-btn-secundario">
+                Como funciona?
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="produto-hero-visual">
+
+        <div class="produto-visual-card">
+
+            <i class="fa-solid fa-building"></i>
+
+            <h3>
+                Sua empresa,
+                <strong>do jeito certo.</strong>
+            </h3>
+
+            <p>
+                Mais tranquilidade para você
+                focar no seu negócio.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     COMO FUNCIONA
+========================= -->
+
+<section class="produto-processo" id="como-funciona">
+
+    <div class="produto-titulo">
+
+        <span>COMO FUNCIONA</span>
+
+        <h2>
+            Abrir sua empresa pode ser simples.
+        </h2>
+
+        <p>
+            Nós cuidamos das etapas necessárias para que você
+            possa começar seu negócio com segurança.
+        </p>
+
+    </div>
+
+
+    <div class="processo-container">
+
+
+        <!-- ETAPA 1 -->
+
+        <div class="processo-item">
+
+            <div class="processo-numero">
+                01
+            </div>
+
+            <div class="processo-conteudo">
+
+                <h3>
+                    Planejamento
+                </h3>
+
+                <p>
+                    Entendemos o seu negócio e orientamos sobre
+                    a melhor estrutura para começar.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="processo-linha"></div>
+
+
+        <!-- ETAPA 2 -->
+
+        <div class="processo-item">
+
+            <div class="processo-numero">
+                02
+            </div>
+
+            <div class="processo-conteudo">
+
+                <h3>
+                    Abertura
+                </h3>
+
+                <p>
+                    Cuidamos dos registros, documentos e
+                    procedimentos necessários para formalizar
+                    sua empresa.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="processo-linha"></div>
+
+
+        <!-- ETAPA 3 -->
+
+        <div class="processo-item">
+
+            <div class="processo-numero">
+                03
+            </div>
+
+            <div class="processo-conteudo">
+
+                <h3>
+                    Regularização
+                </h3>
+
+                <p>
+                    Deixamos tudo organizado para que sua empresa
+                    esteja pronta para iniciar suas atividades.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     O QUE ESTÁ INCLUSO
+========================= -->
+
+<section class="produto-incluso">
+
+    <div class="produto-incluso-conteudo">
+
+        <span>O QUE ESTÁ INCLUSO</span>
+
+        <h2>
+            Tudo o que você precisa
+            para começar.
+        </h2>
+
+        <p>
+            Da escolha da estrutura da empresa à sua
+            regularização, você conta com acompanhamento
+            em cada etapa.
+        </p>
+
+    </div>
+
+
+    <div class="incluso-lista">
+
+        <div class="incluso-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Escolha do tipo de empresa
+            </span>
+
+        </div>
+
+
+        <div class="incluso-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Definição do regime tributário
+            </span>
+
+        </div>
+
+
+        <div class="incluso-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Registro da empresa
+            </span>
+
+        </div>
+
+
+        <div class="incluso-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Emissão do CNPJ
+            </span>
+
+        </div>
+
+
+        <div class="incluso-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Orientação durante o processo
+            </span>
+
+        </div>
+
+
+        <div class="incluso-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Regularização da empresa
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     POR QUE A SPACO?
+========================= -->
+
+<section class="produto-beneficios">
+
+    <div class="produto-titulo">
+
+        <span>POR QUE A SPACO?</span>
+
+        <h2>
+            Você cuida do negócio.
+            A gente cuida da burocracia.
+        </h2>
+
+    </div>
+
+
+    <div class="beneficios-grid">
+
+
+        <div class="beneficio-card">
+
+            <div class="beneficio-icone">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <h3>
+                Segurança
+            </h3>
+
+            <p>
+                Conte com orientação para começar sua
+                empresa de forma organizada e segura.
+            </p>
+
+        </div>
+
+
+        <div class="beneficio-card">
+
+            <div class="beneficio-icone">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <h3>
+                Agilidade
+            </h3>
+
+            <p>
+                Simplificamos o processo para você não
+                precisar perder tempo com burocracia.
+            </p>
+
+        </div>
+
+
+        <div class="beneficio-card">
+
+            <div class="beneficio-icone">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <h3>
+                Especialistas
+            </h3>
+
+            <p>
+                Tenha suporte contábil para tomar as
+                melhores decisões desde o início.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="produto-cta">
+
+    <div>
+
+        <span>
+            PRONTO PARA COMEÇAR?
+        </span>
+
+        <h2>
+            Tire sua empresa do papel.
+        </h2>
+
+        <p>
+            Conte com a Spaco Contábil para cuidar
+            da abertura do seu negócio.
+        </p>
+
+    </div>
+
+
+    <a href="#" class="produto-btn-principal">
+
+        Quero abrir minha empresa
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</section>
+
+
+{% endblock %}

@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
+    {% block css %}
+    {% endblock %}
+
 </head>
 
 <body>
@@ -20,19 +23,89 @@
             <img src="{{ url_for('static', filename='img/logo-header.png') }}" alt="Logo da Spaco Contábil" class="logo-header">
         </a>
         
-        <nav class="menu">
-            <div class="menu-info">
-                <a href="#">Home</a>
-                <a href="#">Serviços</a>
-                <a href="#">Sobre</a>
-                <a href="#">Contato</a>
-            </div>
-            <div class="menu-login">
-                <a href="#">Login
-                    <i class="fa-solid fa-arrow-right-to-bracket" style="color: #FFD700;"></i>
-                </a>
-            </div>
-        </nav>
+            <nav class="menu">
+
+                <div class="menu-info">
+
+                    <!-- HOME -->
+                    <a href="{{ url_for('home.home') }}">
+                        Home
+                    </a>
+
+
+                    <!-- SERVIÇOS -->
+                    <div class="menu-dropdown">
+
+                        <a href="#" class="menu-dropdown-link">
+                            Serviços
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+
+                        <div class="dropdown-conteudo">
+
+                            <a href="{{ url_for('service.abrasuaempresa') }}">Abrir empresa</a>
+
+                            <a href="{{ url_for('service.deixardesermei') }}">Deixar de ser MEI</a>
+
+                            <a href="{{ url_for('service.trocarcontador') }}">Trocar de contador</a>
+
+                            <a href="{{ url_for('service.contabilidadecompleta') }}">Contabilidade completa</a>
+
+                            <a href="{{ url_for('service.assessoriacontabil') }}">Assessoria contábil</a>
+
+                            <a href="{{ url_for('service.planejamentotributario') }}">Planejamento tributário</a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SOBRE -->
+                    <div class="menu-dropdown">
+
+                        <a href="#" class="menu-dropdown-link">
+                            Sobre
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+
+                        <div class="dropdown-conteudo">
+
+                            <a href="#">Quem somos</a>
+
+                            <a href="#">Nossa equipe</a>
+
+                            <a href="#">Por que escolher a Spaco?</a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTATO -->
+                    <a href="#">
+                        Contato
+                    </a>
+
+                </div>
+
+
+                <!-- LOGIN -->
+
+                <div class="menu-login">
+
+                    <a href="#">
+                        Login
+
+                        <i
+                            class="fa-solid fa-arrow-right-to-bracket"
+                            style="color: #FFD700;"
+                        ></i>
+
+                    </a>
+
+                </div>
+
+            </nav>
     </header>
 
     {% block conteudo %}{% endblock %}

@@ -1,0 +1,957 @@
+/* =========================
+   DEIXAR DE SER MEI
+========================= */
+
+
+/* =========================
+   HERO
+========================= */
+
+.mei-hero {
+
+    min-height: 650px;
+
+    padding: 80px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 60px;
+
+    background: #F5F9FF;
+
+    box-sizing: border-box;
+}
+
+
+.mei-hero-conteudo {
+
+    width: 55%;
+
+    max-width: 680px;
+}
+
+
+.mei-tag {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background: #FFF4B8;
+
+    color: #0B3B91;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.mei-hero h1 {
+
+    margin: 0 0 25px;
+
+    font-size: 52px;
+
+    line-height: 1.12;
+
+    color: #0B3B91;
+}
+
+
+.mei-hero h1 span {
+
+    display: block;
+
+    color: #111;
+}
+
+
+.mei-hero p {
+
+    max-width: 620px;
+
+    margin: 0 0 30px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+/* BOTÕES */
+
+.mei-botoes {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.mei-btn-principal {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 24px;
+
+    border-radius: 12px;
+
+    background: #FFD700;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+
+.mei-btn-principal:hover {
+
+    background: #FFF4B8;
+
+    transform: translateY(-3px);
+}
+
+
+.mei-btn-secundario {
+
+    padding: 13px 23px;
+
+    border: 2px solid #0B3B91;
+
+    border-radius: 12px;
+
+    color: #0B3B91;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+
+.mei-btn-secundario:hover {
+
+    background: #0B3B91;
+
+    color: white;
+}
+
+
+/* =========================
+   VISUAL
+========================= */
+
+.mei-hero-visual {
+
+    width: 40%;
+
+    min-height: 400px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.mei-visual-card {
+
+    width: 340px;
+
+    min-height: 360px;
+
+    padding: 45px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: #0B3B91;
+
+    border-radius: 30px;
+
+    box-shadow: 0 20px 50px rgba(11, 59, 145, 0.25);
+
+    transform: rotate(-2deg);
+
+    color: white;
+}
+
+
+.mei-visual-icone {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin-bottom: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: #FFD700;
+
+    color: #0B3B91;
+
+    font-size: 30px;
+}
+
+
+.mei-visual-card h3 {
+
+    margin: 0 0 15px;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+}
+
+
+.mei-visual-card h3 strong {
+
+    color: #FFD700;
+}
+
+
+.mei-visual-card p {
+
+    margin: 0;
+
+    color: #DCE6F5;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.mei-titulo {
+
+    max-width: 750px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+.mei-titulo > span,
+.mei-incluso-conteudo > span {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #0B3B91;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+.mei-titulo h2 {
+
+    margin: 0 0 15px;
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    color: #0B3B91;
+}
+
+
+.mei-titulo p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   QUANDO DEIXAR DE SER MEI
+========================= */
+
+.mei-quando {
+
+    padding: 100px 8%;
+
+    background: white;
+}
+
+
+.mei-sinais {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.mei-sinal-card {
+
+    padding: 35px 30px;
+
+    text-align: center;
+
+    border: 1px solid #E4EAF2;
+
+    border-radius: 20px;
+
+    transition: all 0.3s ease;
+}
+
+
+.mei-sinal-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #FFD700;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.mei-sinal-icone {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #FFF4B8;
+
+    color: #0B3B91;
+
+    font-size: 25px;
+}
+
+
+.mei-sinal-card h3 {
+
+    margin: 0 0 12px;
+
+    color: #0B3B91;
+
+    font-size: 21px;
+}
+
+
+.mei-sinal-card p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PROCESSO
+========================= */
+
+.mei-processo {
+
+    padding: 100px 8%;
+
+    background: #F5F9FF;
+}
+
+
+.mei-processo-container {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
+}
+
+
+.mei-processo-item {
+
+    width: 30%;
+
+    text-align: center;
+}
+
+
+.mei-processo-numero {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #FFF4B8;
+
+    border: 3px solid #FFD700;
+
+    color: #0B3B91;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+.mei-processo-item h3 {
+
+    margin: 0 0 10px;
+
+    color: #0B3B91;
+
+    font-size: 21px;
+}
+
+
+.mei-processo-item p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+.mei-processo-linha {
+
+    width: 15%;
+
+    height: 3px;
+
+    margin-top: 32px;
+
+    background: #FFD700;
+}
+
+
+/* =========================
+   INCLUSO
+========================= */
+
+.mei-incluso {
+
+    padding: 90px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 80px;
+
+    background: white;
+}
+
+
+.mei-incluso-conteudo {
+
+    width: 45%;
+
+    max-width: 500px;
+}
+
+
+.mei-incluso-conteudo h2 {
+
+    margin: 0 0 20px;
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    color: #0B3B91;
+}
+
+
+.mei-incluso-conteudo p {
+
+    margin: 0;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+.mei-lista {
+
+    width: 50%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.mei-lista-item {
+
+    min-height: 65px;
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #E2E8F0;
+
+    border-radius: 12px;
+
+    color: #333;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+
+.mei-lista-item:hover {
+
+    border-color: #FFD700;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+.mei-lista-item i {
+
+    width: 25px;
+
+    height: 25px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #FFF4B8;
+
+    color: #0B3B91;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   BENEFÍCIOS
+========================= */
+
+.mei-beneficios {
+
+    padding: 100px 8%;
+
+    background: #F5F9FF;
+}
+
+
+.mei-beneficios-grid {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.mei-beneficio-card {
+
+    padding: 35px 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border: 1px solid #E4EAF2;
+
+    transition: all 0.3s ease;
+}
+
+
+.mei-beneficio-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #FFD700;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.mei-beneficio-icone {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #0B3B91;
+
+    color: #FFD700;
+
+    font-size: 25px;
+}
+
+
+.mei-beneficio-card h3 {
+
+    margin: 0 0 12px;
+
+    color: #0B3B91;
+
+    font-size: 21px;
+}
+
+
+.mei-beneficio-card p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.mei-cta {
+
+    max-width: 1200px;
+
+    margin: 80px auto;
+
+    padding: 55px 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    box-sizing: border-box;
+
+    border-radius: 25px;
+
+    background: #0B3B91;
+
+    color: white;
+}
+
+
+.mei-cta span {
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    color: #FFD700;
+}
+
+
+.mei-cta h2 {
+
+    max-width: 650px;
+
+    margin: 10px 0;
+
+    font-size: 32px;
+
+    line-height: 1.2;
+}
+
+
+.mei-cta p {
+
+    margin: 0;
+
+    color: #DCE6F5;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .mei-hero {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 70px 6%;
+    }
+
+
+    .mei-hero-conteudo,
+    .mei-hero-visual {
+
+        width: 100%;
+    }
+
+
+    .mei-hero p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .mei-botoes {
+
+        justify-content: center;
+    }
+
+
+    .mei-sinais {
+
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+    }
+
+
+    .mei-incluso {
+
+        flex-direction: column;
+
+        gap: 40px;
+    }
+
+
+    .mei-incluso-conteudo,
+    .mei-lista {
+
+        width: 100%;
+
+        max-width: 700px;
+    }
+
+
+    .mei-beneficios-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+    }
+
+
+    .mei-cta {
+
+        margin: 50px 20px;
+
+        padding: 40px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .mei-hero h1 {
+
+        font-size: 38px;
+    }
+
+
+    .mei-hero {
+
+        min-height: auto;
+    }
+
+
+    .mei-hero-visual {
+
+        min-height: 330px;
+    }
+
+
+    .mei-visual-card {
+
+        width: 290px;
+
+        min-height: 300px;
+
+        padding: 30px;
+    }
+
+
+    .mei-titulo h2,
+    .mei-incluso-conteudo h2 {
+
+        font-size: 30px;
+    }
+
+
+    .mei-processo-container {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+    }
+
+
+    .mei-processo-item {
+
+        width: 100%;
+
+        max-width: 400px;
+    }
+
+
+    .mei-processo-linha {
+
+        width: 3px;
+
+        height: 30px;
+
+        margin: 0;
+    }
+
+
+    .mei-lista {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .mei-cta h2 {
+
+        font-size: 27px;
+    }
+
+}

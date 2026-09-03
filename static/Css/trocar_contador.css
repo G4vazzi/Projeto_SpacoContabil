@@ -1,0 +1,950 @@
+/* =========================
+   TROCAR DE CONTADOR
+========================= */
+
+
+/* =========================
+   HERO
+========================= */
+
+.troca-hero {
+
+    min-height: 650px;
+
+    padding: 80px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 60px;
+
+    background: #F5F9FF;
+
+    box-sizing: border-box;
+}
+
+
+.troca-hero-conteudo {
+
+    width: 55%;
+
+    max-width: 680px;
+}
+
+
+.troca-tag {
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background: #FFF4B8;
+
+    color: #0B3B91;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.troca-hero h1 {
+
+    margin: 0 0 25px;
+
+    font-size: 52px;
+
+    line-height: 1.12;
+
+    color: #0B3B91;
+}
+
+
+.troca-hero h1 span {
+
+    display: block;
+
+    color: #111;
+}
+
+
+.troca-hero p {
+
+    max-width: 620px;
+
+    margin: 0 0 30px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+/* BOTÕES */
+
+.troca-botoes {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.troca-btn-principal {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 24px;
+
+    border-radius: 12px;
+
+    background: #FFD700;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+
+.troca-btn-principal:hover {
+
+    background: #FFF4B8;
+
+    transform: translateY(-3px);
+}
+
+
+.troca-btn-secundario {
+
+    padding: 13px 23px;
+
+    border: 2px solid #0B3B91;
+
+    border-radius: 12px;
+
+    color: #0B3B91;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+
+.troca-btn-secundario:hover {
+
+    background: #0B3B91;
+
+    color: white;
+}
+
+
+/* =========================
+   VISUAL
+========================= */
+
+.troca-hero-visual {
+
+    width: 40%;
+
+    min-height: 400px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.troca-visual-card {
+
+    width: 340px;
+
+    min-height: 360px;
+
+    padding: 45px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: #0B3B91;
+
+    border-radius: 30px;
+
+    box-shadow: 0 20px 50px rgba(11, 59, 145, 0.25);
+
+    transform: rotate(2deg);
+
+    color: white;
+}
+
+
+.troca-visual-icone {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin-bottom: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: #FFD700;
+
+    color: #0B3B91;
+
+    font-size: 30px;
+}
+
+
+.troca-visual-card h3 {
+
+    margin: 0 0 15px;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+}
+
+
+.troca-visual-card h3 strong {
+
+    color: #FFD700;
+}
+
+
+.troca-visual-card p {
+
+    margin: 0;
+
+    color: #DCE6F5;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.troca-titulo {
+
+    max-width: 750px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+.troca-titulo > span,
+.troca-incluso-conteudo > span {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #0B3B91;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+.troca-titulo h2 {
+
+    margin: 0 0 15px;
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    color: #0B3B91;
+}
+
+
+.troca-titulo p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   MOTIVOS
+========================= */
+
+.troca-motivos {
+
+    padding: 100px 8%;
+
+    background: white;
+}
+
+
+.troca-motivos-grid {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.troca-motivo-card {
+
+    padding: 35px 30px;
+
+    text-align: center;
+
+    border: 1px solid #E4EAF2;
+
+    border-radius: 20px;
+
+    transition: all 0.3s ease;
+}
+
+
+.troca-motivo-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #FFD700;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.troca-motivo-icone {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #FFF4B8;
+
+    color: #0B3B91;
+
+    font-size: 25px;
+}
+
+
+.troca-motivo-card h3 {
+
+    margin: 0 0 12px;
+
+    color: #0B3B91;
+
+    font-size: 21px;
+}
+
+
+.troca-motivo-card p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PROCESSO
+========================= */
+
+.troca-processo {
+
+    padding: 100px 8%;
+
+    background: #F5F9FF;
+}
+
+
+.troca-processo-container {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
+}
+
+
+.troca-processo-item {
+
+    width: 30%;
+
+    text-align: center;
+}
+
+
+.troca-processo-numero {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #FFF4B8;
+
+    border: 3px solid #FFD700;
+
+    color: #0B3B91;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+.troca-processo-item h3 {
+
+    margin: 0 0 10px;
+
+    color: #0B3B91;
+
+    font-size: 21px;
+}
+
+
+.troca-processo-item p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+.troca-processo-linha {
+
+    width: 15%;
+
+    height: 3px;
+
+    margin-top: 32px;
+
+    background: #FFD700;
+}
+
+
+/* =========================
+   INCLUSO
+========================= */
+
+.troca-incluso {
+
+    padding: 90px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 80px;
+
+    background: white;
+}
+
+
+.troca-incluso-conteudo {
+
+    width: 45%;
+
+    max-width: 500px;
+}
+
+
+.troca-incluso-conteudo h2 {
+
+    margin: 0 0 20px;
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    color: #0B3B91;
+}
+
+
+.troca-incluso-conteudo p {
+
+    margin: 0;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+.troca-lista {
+
+    width: 50%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.troca-lista-item {
+
+    min-height: 65px;
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #E2E8F0;
+
+    border-radius: 12px;
+
+    color: #333;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+
+.troca-lista-item:hover {
+
+    border-color: #FFD700;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+.troca-lista-item i {
+
+    width: 25px;
+
+    height: 25px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #FFF4B8;
+
+    color: #0B3B91;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   DIFERENCIAIS
+========================= */
+
+.troca-diferenciais {
+
+    padding: 100px 8%;
+
+    background: #F5F9FF;
+}
+
+
+.troca-diferenciais-grid {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.troca-diferencial-card {
+
+    padding: 35px 30px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border: 1px solid #E4EAF2;
+
+    transition: all 0.3s ease;
+}
+
+
+.troca-diferencial-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #FFD700;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.troca-diferencial-icone {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #0B3B91;
+
+    color: #FFD700;
+
+    font-size: 25px;
+}
+
+
+.troca-diferencial-card h3 {
+
+    margin: 0 0 12px;
+
+    color: #0B3B91;
+
+    font-size: 21px;
+}
+
+
+.troca-diferencial-card p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.troca-cta {
+
+    max-width: 1200px;
+
+    margin: 80px auto;
+
+    padding: 55px 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    box-sizing: border-box;
+
+    border-radius: 25px;
+
+    background: #0B3B91;
+
+    color: white;
+}
+
+
+.troca-cta span {
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    color: #FFD700;
+}
+
+
+.troca-cta h2 {
+
+    max-width: 650px;
+
+    margin: 10px 0;
+
+    font-size: 32px;
+
+    line-height: 1.2;
+}
+
+
+.troca-cta p {
+
+    margin: 0;
+
+    color: #DCE6F5;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .troca-hero {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 70px 6%;
+    }
+
+
+    .troca-hero-conteudo,
+    .troca-hero-visual {
+
+        width: 100%;
+    }
+
+
+    .troca-hero p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .troca-botoes {
+
+        justify-content: center;
+    }
+
+
+    .troca-motivos-grid,
+    .troca-diferenciais-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+    }
+
+
+    .troca-incluso {
+
+        flex-direction: column;
+
+        gap: 40px;
+    }
+
+
+    .troca-incluso-conteudo,
+    .troca-lista {
+
+        width: 100%;
+
+        max-width: 700px;
+    }
+
+
+    .troca-cta {
+
+        margin: 50px 20px;
+
+        padding: 40px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .troca-hero h1 {
+
+        font-size: 38px;
+    }
+
+
+    .troca-hero {
+
+        min-height: auto;
+    }
+
+
+    .troca-hero-visual {
+
+        min-height: 330px;
+    }
+
+
+    .troca-visual-card {
+
+        width: 290px;
+
+        min-height: 300px;
+
+        padding: 30px;
+    }
+
+
+    .troca-titulo h2,
+    .troca-incluso-conteudo h2 {
+
+        font-size: 30px;
+    }
+
+
+    .troca-processo-container {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+    }
+
+
+    .troca-processo-item {
+
+        width: 100%;
+
+        max-width: 400px;
+    }
+
+
+    .troca-processo-linha {
+
+        width: 3px;
+
+        height: 30px;
+
+        margin: 0;
+    }
+
+
+    .troca-lista {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .troca-cta h2 {
+
+        font-size: 27px;
+    }
+
+}

@@ -1,0 +1,641 @@
+{% extends "Config/base.html" %}
+
+{% block conteudo %}
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/assessoria_contabil.css') }}">
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="assessoria-hero">
+
+    <div class="assessoria-hero-texto">
+
+        <span class="assessoria-tag">
+            ASSESSORIA CONTÁBIL
+        </span>
+
+        <h1>
+            Decisões melhores começam
+            <span>com a orientação certa.</span>
+        </h1>
+
+        <p>
+            Conte com uma equipe contábil para analisar sua empresa,
+            esclarecer suas dúvidas e ajudar você a tomar decisões
+            mais seguras para o futuro do seu negócio.
+        </p>
+
+        <div class="assessoria-botoes">
+
+            <a href="#" class="assessoria-btn-principal">
+                Falar com um especialista
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#solucoes" class="assessoria-btn-secundario">
+                Conheça a assessoria
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="assessoria-hero-painel">
+
+        <div class="painel-topo">
+
+            <div class="painel-icone">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+
+            <div>
+                <small>
+                    ASSESSORIA
+                </small>
+
+                <strong>
+                    Suporte para decidir
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="painel-linha"></div>
+
+
+        <div class="painel-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Análise do seu negócio
+            </span>
+
+        </div>
+
+
+        <div class="painel-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Orientação contábil
+            </span>
+
+        </div>
+
+
+        <div class="painel-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Planejamento
+            </span>
+
+        </div>
+
+
+        <div class="painel-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+                Apoio nas decisões
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROBLEMAS
+========================= -->
+
+<section class="assessoria-problemas">
+
+    <div class="assessoria-titulo">
+
+        <span>
+            SUA EMPRESA PRECISA DE RESPOSTAS
+        </span>
+
+        <h2>
+            Nem toda decisão precisa ser tomada sozinho.
+        </h2>
+
+        <p>
+            Questões contábeis, fiscais e financeiras podem gerar
+            dúvidas e insegurança. Ter alguém para analisar cada
+            situação pode fazer toda a diferença.
+        </p>
+
+    </div>
+
+
+    <div class="problemas-grid">
+
+        <div class="problema-card">
+
+            <div class="problema-numero">
+                01
+            </div>
+
+            <i class="fa-solid fa-circle-question"></i>
+
+            <h3>
+                Não sabe qual caminho seguir?
+            </h3>
+
+            <p>
+                Entenda as alternativas antes de tomar uma
+                decisão que pode impactar sua empresa.
+            </p>
+
+        </div>
+
+
+        <div class="problema-card">
+
+            <div class="problema-numero">
+                02
+            </div>
+
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+
+            <h3>
+                Dúvidas sobre impostos?
+            </h3>
+
+            <p>
+                Tenha orientação para compreender melhor
+                suas obrigações e possibilidades tributárias.
+            </p>
+
+        </div>
+
+
+        <div class="problema-card">
+
+            <div class="problema-numero">
+                03
+            </div>
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <h3>
+                Sua empresa está crescendo?
+            </h3>
+
+            <p>
+                Mudanças no negócio podem exigir novas
+                estratégias e uma análise mais cuidadosa.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SOLUÇÕES
+========================= -->
+
+<section class="assessoria-solucoes" id="solucoes">
+
+    <div class="assessoria-solucoes-texto">
+
+        <span>
+            COMO PODEMOS AJUDAR
+        </span>
+
+        <h2>
+            Mais clareza para você
+            conduzir sua empresa.
+        </h2>
+
+        <p>
+            Nossa assessoria transforma informações contábeis
+            em orientações que ajudam você a compreender melhor
+            sua empresa e escolher os próximos passos.
+        </p>
+
+        <a href="#" class="assessoria-link">
+            Quero conversar com um especialista
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="solucoes-lista">
+
+        <div class="solucao-item">
+
+            <div class="solucao-icone">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+
+            <div>
+                <h3>
+                    Análise contábil
+                </h3>
+
+                <p>
+                    Avaliação das informações da empresa para
+                    identificar pontos importantes.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="solucao-item">
+
+            <div class="solucao-icone">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <div>
+                <h3>
+                    Orientação tributária
+                </h3>
+
+                <p>
+                    Apoio para compreender questões relacionadas
+                    à tributação do negócio.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="solucao-item">
+
+            <div class="solucao-icone">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+
+            <div>
+                <h3>
+                    Planejamento
+                </h3>
+
+                <p>
+                    Avaliação de possibilidades para preparar
+                    sua empresa para os próximos passos.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="solucao-item">
+
+            <div class="solucao-icone">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+
+            <div>
+                <h3>
+                    Esclarecimento de dúvidas
+                </h3>
+
+                <p>
+                    Converse com profissionais para entender
+                    melhor as situações que envolvem sua empresa.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ÁREAS
+========================= -->
+
+<section class="assessoria-areas">
+
+    <div class="assessoria-titulo">
+
+        <span>
+            APOIO ESPECIALIZADO
+        </span>
+
+        <h2>
+            Orientação para diferentes
+            momentos da sua empresa.
+        </h2>
+
+        <p>
+            Conte com suporte contábil sempre que surgir
+            uma decisão importante para o seu negócio.
+        </p>
+
+    </div>
+
+
+    <div class="areas-grid">
+
+        <div class="area-card">
+
+            <i class="fa-solid fa-building"></i>
+
+            <h3>
+                Estrutura da empresa
+            </h3>
+
+            <p>
+                Orientações relacionadas a mudanças,
+                crescimento e organização do negócio.
+            </p>
+
+        </div>
+
+
+        <div class="area-card">
+
+            <i class="fa-solid fa-money-bill-trend-up"></i>
+
+            <h3>
+                Questões financeiras
+            </h3>
+
+            <p>
+                Apoio para interpretar informações e
+                compreender melhor os números da empresa.
+            </p>
+
+        </div>
+
+
+        <div class="area-card">
+
+            <i class="fa-solid fa-receipt"></i>
+
+            <h3>
+                Questões tributárias
+            </h3>
+
+            <p>
+                Orientação sobre situações relacionadas
+                aos impostos e obrigações da empresa.
+            </p>
+
+        </div>
+
+
+        <div class="area-card">
+
+            <i class="fa-solid fa-people-arrows"></i>
+
+            <h3>
+                Decisões empresariais
+            </h3>
+
+            <p>
+                Suporte para avaliar os impactos contábeis
+                antes de tomar decisões importantes.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROCESSO
+========================= -->
+
+<section class="assessoria-processo">
+
+    <div class="assessoria-titulo">
+
+        <span>
+            COMO FUNCIONA
+        </span>
+
+        <h2>
+            Da dúvida à decisão,
+            com mais segurança.
+        </h2>
+
+    </div>
+
+
+    <div class="processo-wrapper">
+
+        <div class="processo-etapa">
+
+            <div class="processo-numero">
+                01
+            </div>
+
+            <div class="processo-conteudo">
+
+                <h3>
+                    Você apresenta a situação
+                </h3>
+
+                <p>
+                    Conte o que está acontecendo e quais são
+                    suas dúvidas ou objetivos.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="processo-seta">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+
+        <div class="processo-etapa">
+
+            <div class="processo-numero">
+                02
+            </div>
+
+            <div class="processo-conteudo">
+
+                <h3>
+                    Analisamos as informações
+                </h3>
+
+                <p>
+                    Nossa equipe avalia a situação considerando
+                    as características da sua empresa.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="processo-seta">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+
+        <div class="processo-etapa">
+
+            <div class="processo-numero">
+                03
+            </div>
+
+            <div class="processo-conteudo">
+
+                <h3>
+                    Você decide com mais clareza
+                </h3>
+
+                <p>
+                    Receba uma orientação para entender melhor
+                    suas opções e seguir em frente.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     BENEFÍCIOS
+========================= -->
+
+<section class="assessoria-beneficios">
+
+    <div class="beneficios-imagem">
+
+        <div class="beneficio-destaque">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <strong>
+                Informação
+                <span>+ Orientação</span>
+            </strong>
+
+            <p>
+                Decisões mais conscientes
+                para o seu negócio.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="beneficios-texto">
+
+        <span>
+            O RESULTADO
+        </span>
+
+        <h2>
+            Uma empresa mais preparada
+            para tomar decisões.
+        </h2>
+
+        <p>
+            Ter uma assessoria contábil significa contar com
+            profissionais que ajudam você a enxergar além
+            das obrigações do dia a dia.
+        </p>
+
+
+        <div class="beneficios-lista">
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Mais segurança nas decisões
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Maior clareza sobre os números
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Orientação especializada
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Mais tranquilidade para empreender
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="assessoria-cta">
+
+    <div>
+
+        <span>
+            PRECISA DE ORIENTAÇÃO?
+        </span>
+
+        <h2>
+            Não tome decisões importantes
+            sem entender todos os caminhos.
+        </h2>
+
+        <p>
+            Converse com nossa equipe e descubra como
+            uma assessoria contábil pode ajudar sua empresa.
+        </p>
+
+    </div>
+
+
+    <a href="#" class="assessoria-btn-principal">
+
+        Falar com um especialista
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</section>
+
+
+{% endblock %}

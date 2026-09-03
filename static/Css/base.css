@@ -105,6 +105,144 @@ header {
     background-color: #FFF4B8
 }
 
+/*Menu Suspenso*/
+
+.menu-dropdown {
+    position: relative;
+}
+
+
+/* LINK PRINCIPAL */
+
+.menu-dropdown-link {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    text-decoration: none;
+
+    color: #0B3B91;
+
+    padding: 15px 20px;
+
+    border-radius: 15px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* SETA */
+
+.menu-dropdown-link i {
+    font-size: 10px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* QUANDO PASSAR O MOUSE NA ABA */
+
+.menu-dropdown:hover .menu-dropdown-link {
+    background: #FFF4B8;
+}
+
+
+/* GIRAR A SETA */
+
+.menu-dropdown:hover .menu-dropdown-link i {
+    transform: rotate(180deg);
+}
+
+
+/* =========================
+   CAIXA DO MENU
+========================= */
+
+.dropdown-conteudo {
+
+    position: absolute;
+
+    top: calc(100% + 5px);
+
+    left: 0;
+
+    min-width: 240px;
+
+    padding: 10px;
+
+    background: white;
+
+    border: 1px solid #E5EAF2;
+
+    border-radius: 14px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 9999;
+}
+
+
+/* MOSTRAR MENU */
+
+.menu-dropdown:hover .dropdown-conteudo {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================
+   LINKS DO MENU
+========================= */
+
+.dropdown-conteudo a {
+
+    display: block;
+
+    padding: 12px 15px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    font-size: 14px;
+
+    transition: all 0.2s ease;
+
+}
+
+
+/* HOVER DOS ITENS */
+
+.dropdown-conteudo a:hover {
+
+    background: #FFF4B8;
+
+    color: #0B3B91;
+
+    padding-left: 20px;
+
+}
+
 /* Footer */
 
 footer {
