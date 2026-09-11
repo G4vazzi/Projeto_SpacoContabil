@@ -1,0 +1,425 @@
+/* =========================================================
+   OUTRAS PÁGINAS - SPACOCONTABIL
+   Quem Somos | Nossa Equipe | Por Que Escolher | Contato
+   ========================================================= */
+
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+.quem-hero,
+.quem-sobre,
+.quem-proposito,
+.quem-final {
+    width: 100%;
+}
+
+
+/* =========================================================
+   QUEM SOMOS
+   ========================================================= */
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.quem-hero {
+    min-height: calc(100vh - var(--altura-menu));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 7%;
+
+    background-image: url('/static/Img/Background-others.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.quem-hero-conteudo {
+    width: 100%;
+    max-width: 950px;
+
+    text-align: center;
+}
+
+.quem-hero-conteudo h1 {
+    margin-bottom: 25px;
+
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1.12;
+
+    color: white;
+}
+
+.quem-hero-conteudo h1::first-letter {
+    color: white;
+}
+
+.quem-hero-conteudo h1 span {
+    color: #FFD700;
+}
+
+.quem-hero-conteudo p {
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: white;
+}
+
+
+/* =========================
+   SOBRE
+   ========================= */
+
+.quem-sobre {
+    padding: 90px 7%;
+
+    background: #F0F8FF;
+}
+
+.quem-sobre-conteudo {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+/* TÍTULO PEQUENO */
+
+.quem-subtitulo {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #0B3B91;
+}
+
+
+/* TÍTULO */
+
+.quem-sobre-texto h2 {
+    margin: 0 0 25px;
+
+    font-size: 38px;
+    line-height: 1.2;
+
+    color: #0B3B91;
+}
+
+
+/* TEXTOS */
+
+.quem-sobre-texto p {
+    margin: 0 0 18px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #333;
+}
+
+
+/* =========================
+   CARDS DESTAQUE
+   ========================= */
+
+.quem-sobre-destaque {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.destaque-card {
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #E4EAF2;
+
+    border-left: 5px solid #FFD700;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+
+    transition: all 0.3s ease;
+}
+
+.destaque-card:hover {
+    transform: translateX(5px);
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+}
+
+.destaque-card strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 20px;
+
+    color: #0B3B91;
+}
+
+.destaque-card span {
+    display: block;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   PROPÓSITO
+   ========================================================= */
+
+.quem-proposito {
+    padding: 90px 7%;
+
+    background: white;
+}
+
+.quem-proposito-titulo {
+    max-width: 800px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.quem-proposito-titulo h2 {
+    margin: 0 0 18px;
+
+    font-size: 36px;
+    line-height: 1.2;
+
+    color: #0B3B91;
+}
+
+.quem-proposito-titulo p {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #444;
+}
+
+
+/* =========================
+   CARDS PROPÓSITO
+   ========================= */
+
+.quem-proposito-cards {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.proposito-card {
+    padding: 30px;
+
+    background: #FFF4B8;
+
+    border-radius: 18px;
+
+    transition: all 0.3s ease;
+}
+
+.proposito-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+.proposito-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 22px;
+
+    color: #0B3B91;
+}
+
+.proposito-card p {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
+
+.quem-final {
+    padding: 90px 7%;
+
+    background: #0B3B91;
+
+    text-align: center;
+}
+
+.quem-final-conteudo {
+    max-width: 800px;
+
+    margin: 0 auto;
+}
+
+.quem-final .quem-subtitulo {
+    color: #FFD700;
+}
+
+.quem-final h2 {
+    margin: 0 0 20px;
+
+    font-size: 38px;
+    line-height: 1.2;
+
+    color: white;
+}
+
+.quem-final p {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: white;
+}
+
+
+/* =========================
+   BOTÃO
+   ========================= */
+
+.btn-quem {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    background: #FFD700;
+
+    border-radius: 12px;
+
+    color: #000;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.btn-quem:hover {
+    background: #FFF4B8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .quem-hero {
+        min-height: 500px;
+
+        padding: 70px 6%;
+    }
+
+    .quem-sobre-conteudo {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .quem-proposito-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .quem-hero {
+        min-height: 450px;
+
+        padding: 60px 5%;
+    }
+
+    .quem-hero-conteudo h1 {
+        font-size: 36px;
+    }
+
+    .quem-hero-conteudo p {
+        font-size: 16px;
+    }
+
+    .quem-sobre {
+        padding: 65px 5%;
+    }
+
+    .quem-sobre-texto h2 {
+        font-size: 30px;
+    }
+
+    .quem-proposito {
+        padding: 65px 5%;
+    }
+
+    .quem-proposito-titulo h2 {
+        font-size: 30px;
+    }
+
+    .quem-final {
+        padding: 65px 5%;
+    }
+
+    .quem-final h2 {
+        font-size: 30px;
+    }
+}

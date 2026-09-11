@@ -1,0 +1,135 @@
+{% extends "Config/base.html" %}
+
+{% block css %}
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/others.css') }}">
+
+{% endblock %}
+
+{% block conteudo %}
+
+<section class="quem-hero">
+    <div class="quem-hero-conteudo">
+        <h1>Mais do que contabilidade, <span>somos parceiros do seu negócio.</span></h1>
+
+        <p>
+            Estamos ao seu lado para cuidar da contabilidade e ajudar você
+            a tomar as melhores decisões para o seu negócio.
+        </p>
+    </div>
+</section>
+
+
+<section class="quem-sobre">
+    <div class="quem-sobre-conteudo">
+
+        <div class="quem-sobre-texto">
+            <span class="quem-subtitulo">QUEM SOMOS</span>
+
+            <h2>Contabilidade que entende o seu negócio.</h2>
+
+            <p>
+                Na SpacoContabil, acreditamos que a contabilidade vai muito
+                além de números, impostos e obrigações.
+            </p>
+
+            <p>
+                Nosso trabalho é transformar informações contábeis em
+                conhecimento para que você tenha mais segurança para
+                administrar sua empresa e tomar decisões importantes.
+            </p>
+
+            <p>
+                Buscamos construir uma relação próxima com nossos clientes,
+                entendendo suas necessidades e oferecendo soluções que
+                acompanhem cada etapa do negócio.
+            </p>
+        </div>
+
+        <div class="quem-sobre-destaque">
+            <div class="destaque-card">
+                <strong>Contabilidade</strong>
+                <span>Organização e segurança para sua empresa.</span>
+            </div>
+
+            <div class="destaque-card">
+                <strong>Estratégia</strong>
+                <span>Informações para decisões mais inteligentes.</span>
+            </div>
+
+            <div class="destaque-card">
+                <strong>Parceria</strong>
+                <span>Um relacionamento próximo e transparente.</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="quem-proposito">
+
+    <div class="quem-proposito-titulo">
+        <span class="quem-subtitulo">NOSSO PROPÓSITO</span>
+
+        <h2>Fazer a contabilidade trabalhar a favor do seu negócio.</h2>
+
+        <p>
+            Queremos tornar a contabilidade mais simples, clara e útil,
+            ajudando empresários a enxergar oportunidades e tomar decisões
+            com mais confiança.
+        </p>
+    </div>
+
+    <div class="quem-proposito-cards">
+
+        <div class="proposito-card">
+            <h3>Clareza</h3>
+            <p>
+                Informações contábeis apresentadas de forma simples para
+                facilitar suas decisões.
+            </p>
+        </div>
+
+        <div class="proposito-card">
+            <h3>Segurança</h3>
+            <p>
+                Cuidamos das obrigações e processos contábeis para que
+                sua empresa tenha mais tranquilidade.
+            </p>
+        </div>
+
+        <div class="proposito-card">
+            <h3>Crescimento</h3>
+            <p>
+                Utilizamos a contabilidade como ferramenta para apoiar
+                o desenvolvimento da sua empresa.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="quem-final">
+
+    <div class="quem-final-conteudo">
+        <span class="quem-subtitulo">SPACOCONTABIL</span>
+
+        <h2>Seu negócio merece mais do que um contador.</h2>
+
+        <p>
+            Merece um parceiro que conheça sua empresa, entenda seus
+            desafios e esteja preparado para acompanhar seu crescimento.
+        </p>
+
+        <a href="#" class="btn-quem">
+            Fale conosco
+        </a>
+    </div>
+
+</section>
+
+{% endblock %}

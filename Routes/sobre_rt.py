@@ -8,23 +8,17 @@ sobre_bp = Blueprint('sobre', __name__)
 @sobre_bp.route('/quemsomos')
 def quemsomos():
     return render_template(
-        'quemsomos.html'
-        )
-
-@sobre_bp.route('/nossaequipe')
-def nossaequipe():
-    return render_template(
-        'nossaequipe.html'
+        'Others/quemsomos.html'
         )
 
 @sobre_bp.route('/porqueescolher')
 def porqueescolher():
     return render_template(
-        'porqueescolher.html'
+        'Others/porqueescolher.html'
         )
 
 @sobre_bp.route('/contato')
 def contato():
     return render_template(
-        'contato.html'
+        'Others/contato.html'
         )
