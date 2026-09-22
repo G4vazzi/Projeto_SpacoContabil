@@ -1,0 +1,897 @@
+{% extends "Config/base.html" %}
+
+{% block title %}Calculadora de Abertura de Empresa{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ferramentas.css') }}">
+{% endblock %}
+
+{% block conteudo %}
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="abertura-breadcrumb">
+
+    <a href="/">Home</a>
+
+    <span>›</span>
+
+    <a href="#">Ferramentas</a>
+
+    <span>›</span>
+
+    <strong>Calculadora de Abertura de Empresa</strong>
+
+</div>
+
+
+<!-- =====================================================
+     CALCULADORA
+===================================================== -->
+
+<section class="abertura-calculadora">
+
+    <div class="abertura-decoracao abertura-decoracao-1"></div>
+    <div class="abertura-decoracao abertura-decoracao-2"></div>
+
+
+    <div class="abertura-conteudo">
+
+        <!-- =================================================
+             LADO ESQUERDO
+        ================================================== -->
+
+        <div class="abertura-informacoes">
+
+            <span class="abertura-tag">
+                FERRAMENTA GRATUITA
+            </span>
+
+            <h1>
+                Calculadora de<br>
+                Abertura de Empresa
+            </h1>
+
+            <p class="abertura-descricao">
+                Descubra uma estimativa dos principais custos
+                para abrir sua empresa e veja se você pode se
+                enquadrar como MEI.
+            </p>
+
+
+            <div class="abertura-beneficios">
+
+                <div class="abertura-beneficio">
+
+                    <div class="abertura-beneficio-icone">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+
+                    <div>
+                        <strong>Rápido</strong>
+                        <span>Calcule em poucos segundos.</span>
+                    </div>
+
+                </div>
+
+
+                <div class="abertura-beneficio">
+
+                    <div class="abertura-beneficio-icone">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
+
+                    <div>
+                        <strong>Gratuito</strong>
+                        <span>Sem custo para utilizar.</span>
+                    </div>
+
+                </div>
+
+
+                <div class="abertura-beneficio">
+
+                    <div class="abertura-beneficio-icone">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+
+                    <div>
+                        <strong>Personalizado</strong>
+                        <span>Consideramos seu estado e natureza jurídica.</span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FORMULÁRIO
+        ================================================== -->
+
+        <div class="abertura-formulario">
+
+            <form id="form-calculadora-abertura">
+
+
+                <!-- =================================================
+                     ESTADO
+                ================================================== -->
+
+                <div class="abertura-campo">
+
+                    <label for="estado">
+                        Estado
+                    </label>
+
+                    <select
+                        id="estado"
+                        class="abertura-select"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione o estado
+                        </option>
+
+                        <option value="AC">Acre - AC</option>
+                        <option value="AL">Alagoas - AL</option>
+                        <option value="AP">Amapá - AP</option>
+                        <option value="AM">Amazonas - AM</option>
+                        <option value="BA">Bahia - BA</option>
+                        <option value="CE">Ceará - CE</option>
+                        <option value="DF">Distrito Federal - DF</option>
+                        <option value="ES">Espírito Santo - ES</option>
+                        <option value="GO">Goiás - GO</option>
+                        <option value="MA">Maranhão - MA</option>
+                        <option value="MT">Mato Grosso - MT</option>
+                        <option value="MS">Mato Grosso do Sul - MS</option>
+                        <option value="MG">Minas Gerais - MG</option>
+                        <option value="PA">Pará - PA</option>
+                        <option value="PB">Paraíba - PB</option>
+                        <option value="PR">Paraná - PR</option>
+                        <option value="PE">Pernambuco - PE</option>
+                        <option value="PI">Piauí - PI</option>
+                        <option value="RJ">Rio de Janeiro - RJ</option>
+                        <option value="RN">Rio Grande do Norte - RN</option>
+                        <option value="RS">Rio Grande do Sul - RS</option>
+                        <option value="RO">Rondônia - RO</option>
+                        <option value="RR">Roraima - RR</option>
+                        <option value="SC">Santa Catarina - SC</option>
+                        <option value="SP">São Paulo - SP</option>
+                        <option value="SE">Sergipe - SE</option>
+                        <option value="TO">Tocantins - TO</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- =================================================
+                     NATUREZA JURÍDICA
+                ================================================== -->
+
+                <div class="abertura-campo">
+
+                    <label for="natureza-juridica">
+                        Natureza jurídica
+                    </label>
+
+                    <select
+                        id="natureza-juridica"
+                        class="abertura-select"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione a natureza jurídica
+                        </option>
+
+                        <option value="MEI">
+                            Microempreendedor Individual (MEI)
+                        </option>
+
+                        <option value="EI">
+                            Empresário Individual (EI)
+                        </option>
+
+                        <option value="LTDA">
+                            Sociedade Limitada
+                        </option>
+
+                        <option value="SA">
+                            Sociedade Anônima (S/A)
+                        </option>
+                        
+                    </select>
+
+                </div>
+
+
+                <!-- =================================================
+                     ÁREA ESPECÍFICA DO MEI
+                     ESCONDIDA INICIALMENTE
+                ================================================== -->
+
+                <div
+                    id="area-mei"
+                    class="abertura-area-mei"
+                    style="display: none;"
+                >
+
+                    <div class="abertura-mei-titulo">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <div>
+
+                            <strong>
+                                Verificação de enquadramento MEI
+                            </strong>
+
+                            <span>
+                                Responda às perguntas abaixo para
+                                verificarmos as principais condições.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CATEGORIA MEI -->
+
+                    <div class="abertura-campo">
+
+                        <label for="categoria-mei">
+                            Categoria do MEI
+                        </label>
+
+                        <select
+                            id="categoria-mei"
+                            class="abertura-select"
+                        >
+
+                            <option value="NORMAL">
+                                MEI - Atividade comum
+                            </option>
+
+                            <option value="CAMINHONEIRO">
+                                MEI Caminhoneiro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- ATIVIDADE PERMITIDA -->
+
+                    <div class="abertura-campo">
+
+                        <label for="atividade-mei">
+                            Sua ocupação está na lista de atividades
+                            permitidas para MEI?
+                        </label>
+
+                        <select
+                            id="atividade-mei"
+                            class="abertura-select"
+                        >
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="SIM">
+                                Sim
+                            </option>
+
+                            <option value="NAO">
+                                Não
+                            </option>
+
+                        </select>
+
+                        <small class="abertura-ajuda">
+
+                            A atividade deve corresponder a uma
+                            ocupação permitida e ao respectivo CNAE.
+
+                        </small>
+
+                        <a
+                            href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/quero-ser-mei/quais-as-ocupacoes-que-podem-ser-mei"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="abertura-link-mei"
+                        >
+                            Consultar atividades permitidas
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+
+                    <!-- EMPREGADOS -->
+
+                    <div class="abertura-campo">
+
+                        <label for="quantidade-empregados">
+                            Quantos empregados pretende contratar?
+                        </label>
+
+                        <select
+                            id="quantidade-empregados"
+                            class="abertura-select"
+                        >
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="0">
+                                Nenhum
+                            </option>
+
+                            <option value="1">
+                                1 empregado
+                            </option>
+
+                            <option value="2">
+                                2 ou mais empregados
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- OUTRA EMPRESA -->
+
+                    <div class="abertura-campo">
+
+                        <label for="outra-empresa">
+                            Você participa de outra empresa como
+                            titular, sócio ou administrador?
+                        </label>
+
+                        <select
+                            id="outra-empresa"
+                            class="abertura-select"
+                        >
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="NAO">
+                                Não
+                            </option>
+
+                            <option value="SIM">
+                                Sim
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- FILIAL -->
+
+                    <div class="abertura-campo">
+
+                        <label for="filial">
+                            A empresa terá ou abrirá uma filial?
+                        </label>
+
+                        <select
+                            id="filial"
+                            class="abertura-select"
+                        >
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="NAO">
+                                Não
+                            </option>
+
+                            <option value="SIM">
+                                Sim
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- MÊS DE ABERTURA -->
+
+                    <div class="abertura-campo">
+
+                        <label for="mes-abertura">
+                            Mês previsto para abertura
+                        </label>
+
+                        <select
+                            id="mes-abertura"
+                            class="abertura-select"
+                        >
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="1">
+                                Janeiro
+                            </option>
+
+                            <option value="2">
+                                Fevereiro
+                            </option>
+
+                            <option value="3">
+                                Março
+                            </option>
+
+                            <option value="4">
+                                Abril
+                            </option>
+
+                            <option value="5">
+                                Maio
+                            </option>
+
+                            <option value="6">
+                                Junho
+                            </option>
+
+                            <option value="7">
+                                Julho
+                            </option>
+
+                            <option value="8">
+                                Agosto
+                            </option>
+
+                            <option value="9">
+                                Setembro
+                            </option>
+
+                            <option value="10">
+                                Outubro
+                            </option>
+
+                            <option value="11">
+                                Novembro
+                            </option>
+
+                            <option value="12">
+                                Dezembro
+                            </option>
+
+                        </select>
+
+                        <small class="abertura-ajuda">
+
+                            No ano de abertura, o limite do MEI é
+                            proporcional ao número de meses de atividade.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     ATIVIDADE GERAL
+                ================================================== -->
+
+                <div class="abertura-campo">
+
+                    <label for="atividade">
+                        Atividade principal
+                    </label>
+
+                    <select
+                        id="atividade"
+                        class="abertura-select"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione sua atividade
+                        </option>
+
+                        <option value="comercio">
+                            Comércio
+                        </option>
+
+                        <option value="servicos">
+                            Prestação de Serviços
+                        </option>
+
+                        <option value="industria">
+                            Indústria
+                        </option>
+
+                        <option value="tecnologia">
+                            Tecnologia
+                        </option>
+
+                        <option value="consultoria">
+                            Consultoria
+                        </option>
+
+                        <option value="profissional">
+                            Profissional Liberal
+                        </option>
+
+                        <option value="outra">
+                            Outra atividade
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- =================================================
+                     FATURAMENTO
+                ================================================== -->
+
+                <div class="abertura-campo">
+
+                    <label for="faturamento">
+                        Faturamento mensal estimado
+                    </label>
+
+                    <input
+                        type="text"
+                        id="faturamento"
+                        class="abertura-input-valor"
+                        placeholder="R$ 0,00"
+                        inputmode="numeric"
+                        required
+                    >
+
+                    <small
+                        class="abertura-ajuda"
+                        id="ajuda-faturamento"
+                    >
+                        Informe quanto você estima faturar por mês.
+                    </small>
+
+                </div>
+
+
+                <!-- =================================================
+                     BOTÃO
+                ================================================== -->
+
+                <button
+                    type="submit"
+                    class="abertura-botao"
+                >
+
+                    Verificar e calcular
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <p class="abertura-observacao">
+
+                    * O resultado é uma estimativa. Taxas de órgãos,
+                    licenças e outros custos podem variar conforme
+                    o estado, município, atividade e situação da empresa.
+
+                </p>
+
+            </form>
+
+
+            <!-- =================================================
+                 RESULTADO
+            ================================================== -->
+
+            <div
+                class="abertura-resultado"
+                id="resultado-abertura"
+                style="display: none;"
+            >
+
+                <div class="abertura-resultado-topo">
+
+                    <span id="resultado-status-label">
+                        ESTIMATIVA DE CUSTO
+                    </span>
+
+                    <h2 id="valor-resultado">
+                        R$ 0,00
+                    </h2>
+
+                </div>
+
+
+                <!-- MENSAGEM MEI -->
+
+                <div
+                    id="resultado-mei-mensagem"
+                    class="abertura-mei-resultado"
+                    style="display: none;"
+                >
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+
+                        <strong id="resultado-mei-titulo">
+                            Enquadramento compatível
+                        </strong>
+
+                        <p id="resultado-mei-texto">
+                            -
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DADOS -->
+
+                <div class="abertura-dados">
+
+                    <div>
+
+                        <span>Estado</span>
+
+                        <strong id="resultado-estado">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Natureza jurídica</span>
+
+                        <strong id="resultado-natureza">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Atividade</span>
+
+                        <strong id="resultado-atividade">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Faturamento mensal</span>
+
+                        <strong id="resultado-faturamento">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Porte estimado</span>
+
+                        <strong id="resultado-porte">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div id="resultado-limite-container">
+
+                        <span>Limite anual considerado</span>
+
+                        <strong id="resultado-limite">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DETALHAMENTO -->
+
+                <div
+                    class="abertura-detalhamento"
+                    id="resultado-detalhamento"
+                >
+
+                    <div>
+
+                        <span>Registro / Junta Comercial</span>
+
+                        <strong id="resultado-junta">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Certificado Digital</span>
+
+                        <strong id="resultado-certificado">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Serviço de abertura</span>
+
+                        <strong id="resultado-servico">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ALERTA -->
+
+                <div
+                    id="resultado-alerta"
+                    class="abertura-resultado-alerta"
+                    style="display: none;"
+                >
+                </div>
+
+
+                <!-- NOVO CÁLCULO -->
+
+                <button
+                    type="button"
+                    class="abertura-novo-calculo"
+                    id="novo-calculo"
+                >
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Fazer novo cálculo
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section class="abertura-faq">
+
+    <div class="abertura-faq-conteudo">
+
+        <span class="abertura-tag">
+            DÚVIDAS FREQUENTES
+        </span>
+
+        <h2>
+            Perguntas frequentes
+        </h2>
+
+
+        <div class="abertura-faq-item">
+
+            <h3>
+                O MEI realmente não paga para abrir a empresa?
+            </h3>
+
+            <p>
+                A formalização do MEI é gratuita. Entretanto,
+                após a formalização existe o pagamento mensal
+                do DAS-MEI.
+            </p>
+
+        </div>
+
+
+        <div class="abertura-faq-item">
+
+            <h3>
+                Qual é o limite de faturamento do MEI?
+            </h3>
+
+            <p>
+                Para o MEI comum, o limite anual é de R$ 81.000,
+                observada a proporcionalidade no ano de abertura.
+                Para o MEI Caminhoneiro existem regras e limite
+                específicos.
+            </p>
+
+        </div>
+
+
+        <div class="abertura-faq-item">
+
+            <h3>
+                Posso ser MEI e ter outra empresa?
+            </h3>
+
+            <p>
+                Não. Entre as condições para o MEI está não ser
+                titular, sócio ou administrador de outra empresa.
+            </p>
+
+        </div>
+
+
+        <div class="abertura-faq-item">
+
+            <h3>
+                O MEI pode contratar funcionários?
+            </h3>
+
+            <p>
+                Sim. O MEI pode contratar no máximo um empregado,
+                observadas as condições aplicáveis.
+            </p>
+
+        </div>
+
+
+        <div class="abertura-faq-item">
+
+            <h3>
+                ME e EPP são naturezas jurídicas?
+            </h3>
+
+            <p>
+                Não. ME e EPP são enquadramentos de porte.
+                A natureza jurídica é uma informação diferente,
+                como MEI, Empresário Individual ou Sociedade
+                Limitada Unipessoal.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="{{ url_for('static', filename='js/calculadora-abertura.js') }}"></script>
+
+{% endblock %}

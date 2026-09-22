@@ -10,12 +10,14 @@ from flask import(
 from Routes.home_rt import home_bp
 from Routes.service_rt import service_bp
 from Routes.sobre_rt import sobre_bp
+from Routes.tools_rt import tools_bp
 
 app=Flask(__name__)
 
 app.register_blueprint(home_bp)
 app.register_blueprint(service_bp)
 app.register_blueprint(sobre_bp)
+app.register_blueprint(tools_bp)
 
 if __name__=="__main__":
     app.run(debug=True)

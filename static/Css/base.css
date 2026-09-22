@@ -78,15 +78,18 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.menu-info a {
+.menu-info > a, .menu-dropdown-link {
+    height: 50px;
+    display: flex;
+    align-items: center;
     padding: 15px 20px;
     border-radius: 15px;
     border: 4px solid transparent;
     text-decoration: none;
-    color: #000;
-    transition: 0.3s ease;
     font-weight: bold;
     white-space: nowrap;
+    line-height: normal;
+    box-sizing: border-box;
 }
 
 .menu-login a {
@@ -108,6 +111,9 @@ header {
 /*Menu Suspenso*/
 
 .menu-dropdown {
+    height: 50px;
+    display: flex;
+    align-items: center;
     position: relative;
 }
 

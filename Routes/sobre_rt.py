@@ -14,7 +14,7 @@ def quemsomos():
 @sobre_bp.route('/porqueescolher')
 def porqueescolher():
     return render_template(
-        'Others/porqueescolher.html'
+        'Others/porque.html'
         )
 
 @sobre_bp.route('/contato')

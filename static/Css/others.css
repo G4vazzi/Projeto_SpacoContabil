@@ -423,3 +423,573 @@
         font-size: 30px;
     }
 }
+
+/* =========================================================
+   POR QUE ESCOLHER A SPACOCONTÁBIL
+   ========================================================= */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.escolher-hero {
+    min-height: calc(100vh - var(--altura-menu));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0B3B91 0%,
+            #082E73 100%
+        );
+
+    text-align: center;
+}
+
+.escolher-hero-conteudo {
+    max-width: 950px;
+}
+
+.escolher-subtitulo {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #0B3B91;
+}
+
+.escolher-hero .escolher-subtitulo {
+    color: #FFD700;
+}
+
+.escolher-hero h1 {
+    margin: 0 0 25px;
+
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1.12;
+
+    color: white;
+}
+
+.escolher-hero h1 span {
+    color: #FFD700;
+}
+
+.escolher-hero p {
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: white;
+}
+
+
+/* =========================================================
+   NOSSO DIFERENCIAL
+   ========================================================= */
+
+.escolher-diferencial {
+    padding: 90px 7%;
+
+    background: #F0F8FF;
+}
+
+.escolher-diferencial-conteudo {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.escolher-diferencial-titulo h2 {
+    margin: 0;
+
+    font-size: 38px;
+    line-height: 1.2;
+
+    color: #0B3B91;
+}
+
+.escolher-diferencial-texto p {
+    margin: 0 0 18px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #444;
+}
+
+
+/* =========================================================
+   BENEFÍCIOS
+   ========================================================= */
+
+.escolher-beneficios {
+    padding: 90px 7%;
+
+    background: white;
+}
+
+.escolher-titulo {
+    max-width: 800px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.escolher-titulo h2 {
+    margin: 0 0 18px;
+
+    font-size: 36px;
+    line-height: 1.2;
+
+    color: #0B3B91;
+}
+
+.escolher-titulo p {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #444;
+}
+
+
+/* =========================================================
+   GRID DOS BENEFÍCIOS
+   ========================================================= */
+
+.escolher-grid {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.escolher-card {
+    min-height: 240px;
+
+    padding: 30px;
+
+    background: #F0F8FF;
+
+    border: 1px solid #E4EAF2;
+
+    border-radius: 18px;
+
+    transition: all 0.3s ease;
+}
+
+.escolher-card:hover {
+    transform: translateY(-6px);
+
+    background: white;
+
+    border-color: #FFD700;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   ÍCONE
+   ========================================================= */
+
+.escolher-icone {
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #0B3B91;
+
+    color: #FFD700;
+
+    font-size: 20px;
+
+    transition: all 0.3s ease;
+}
+
+.escolher-card:hover .escolher-icone {
+    background: #FFD700;
+
+    color: #0B3B91;
+}
+
+
+/* =========================================================
+   TÍTULO DO CARD
+   ========================================================= */
+
+.escolher-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 21px;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   TEXTO DO CARD
+   ========================================================= */
+
+.escolher-card p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   DIFERENÇA
+   ========================================================= */
+
+.escolher-diferenca {
+    padding: 100px 7%;
+
+    background: #F0F8FF;
+}
+
+.escolher-diferenca-conteudo {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.escolher-diferenca-conteudo h2 {
+    max-width: 750px;
+
+    margin: 0 auto 18px;
+
+    font-size: 38px;
+    line-height: 1.2;
+
+    color: #0B3B91;
+}
+
+.escolher-diferenca-conteudo > p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #444;
+}
+
+
+/* =========================================================
+   FLUXO
+   ========================================================= */
+
+.escolher-fluxo {
+    max-width: 1100px;
+
+    margin: 55px auto 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   ITEM DO FLUXO
+   ========================================================= */
+
+.fluxo-item {
+    min-width: 170px;
+
+    padding: 22px 20px;
+
+    background: white;
+
+    border: 2px solid #E4EAF2;
+
+    border-radius: 15px;
+
+    transition: all 0.3s ease;
+}
+
+.fluxo-item:hover {
+    border-color: #FFD700;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.fluxo-item strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 17px;
+
+    color: #0B3B91;
+}
+
+.fluxo-item span {
+    display: block;
+
+    font-size: 13px;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   SETA
+   ========================================================= */
+
+.fluxo-seta {
+    font-size: 25px;
+    font-weight: bold;
+
+    color: #FFD700;
+}
+
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
+
+.escolher-final {
+    padding: 90px 7%;
+
+    background: #0B3B91;
+
+    text-align: center;
+}
+
+.escolher-final-conteudo {
+    max-width: 800px;
+
+    margin: 0 auto;
+}
+
+.escolher-final .escolher-subtitulo {
+    color: #FFD700;
+}
+
+.escolher-final h2 {
+    margin: 0 0 20px;
+
+    font-size: 38px;
+    line-height: 1.2;
+
+    color: white;
+}
+
+.escolher-final p {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: white;
+}
+
+
+/* =========================================================
+   BOTÃO
+   ========================================================= */
+
+.btn-escolher {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    background: #FFD700;
+
+    border-radius: 12px;
+
+    color: #000;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.btn-escolher:hover {
+    background: #FFF4B8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .escolher-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .escolher-fluxo {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - TABLET MENOR
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .escolher-diferencial-conteudo {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .escolher-diferencial-titulo {
+        text-align: center;
+    }
+
+    .escolher-fluxo {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .fluxo-seta {
+        transform: rotate(90deg);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .escolher-hero {
+        min-height: 450px;
+
+        padding: 60px 5%;
+    }
+
+    .escolher-hero h1 {
+        font-size: 36px;
+    }
+
+    .escolher-hero p {
+        font-size: 16px;
+    }
+
+
+    .escolher-diferencial {
+        padding: 65px 5%;
+    }
+
+    .escolher-diferencial-titulo h2 {
+        font-size: 30px;
+    }
+
+
+    .escolher-beneficios {
+        padding: 65px 5%;
+    }
+
+    .escolher-titulo h2 {
+        font-size: 30px;
+    }
+
+    .escolher-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .escolher-card {
+        min-height: auto;
+    }
+
+
+    .escolher-diferenca {
+        padding: 65px 5%;
+    }
+
+    .escolher-diferenca-conteudo h2 {
+        font-size: 30px;
+    }
+
+    .fluxo-item {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    .escolher-final {
+        padding: 65px 5%;
+    }
+
+    .escolher-final h2 {
+        font-size: 30px;
+    }
+
+}
