@@ -14,7 +14,7 @@ def calculadoraAberturaEmpresa():
 @tools_bp.route('/calculadoraPJxCLT')
 def calculadoraPJxCLT():
     return render_template(
-        'Tools/calculadoraPJxCLT.html'
+        'Tools/calculadora_pj_clt.html'
         )
 
 @tools_bp.route('/calculadoraFatorR')

@@ -1,0 +1,655 @@
+{% extends "Config/base.html" %}
+
+{% block title %}Calculadora PJ x CLT{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ferramentas.css') }}">
+{% endblock %}
+
+{% block conteudo %}
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="pjclt-breadcrumb">
+
+    <a href="/">Home</a>
+    <span>›</span>
+
+    <a href="#">Ferramentas</a>
+    <span>›</span>
+
+    <strong>Calculadora PJ x CLT</strong>
+
+</div>
+
+
+<!-- =====================================================
+     INTRODUÇÃO
+===================================================== -->
+
+<section class="pjclt-introducao">
+
+    <h1>
+        Calculadora PJ x CLT
+    </h1>
+
+    <p>
+        Descubra quanto você precisa receber como PJ para
+        manter uma remuneração equivalente ao que recebe
+        atualmente como CLT.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     FORMULÁRIO
+===================================================== -->
+
+<section class="pjclt-box">
+
+    <div class="pjclt-box-conteudo">
+
+        <h2>
+            Preencha as informações abaixo com seus dados CLT:
+        </h2>
+
+
+        <form
+            id="form-calculadora-pj-clt"
+            novalidate
+        >
+
+            <div class="pjclt-grid">
+
+
+                <!-- SALÁRIO -->
+
+                <div class="pjclt-campo">
+
+                    <label for="salario-clt">
+                        Salário mensal bruto:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="salario-clt"
+                        class="pjclt-input"
+                        placeholder="R$ 0,00"
+                        inputmode="numeric"
+                        autocomplete="off"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- VA / VR -->
+
+                <div class="pjclt-campo">
+
+                    <label for="va-vr">
+                        Vale-refeição/alimentação:
+                        <span>(opcional)</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="va-vr"
+                        class="pjclt-input"
+                        placeholder="R$ 0,00"
+                        inputmode="numeric"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- VT -->
+
+                <div class="pjclt-campo">
+
+                    <label for="vt">
+                        Vale-transporte:
+                        <span>(opcional)</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="vt"
+                        class="pjclt-input"
+                        placeholder="R$ 0,00"
+                        inputmode="numeric"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- PLANO DE SAÚDE -->
+
+                <div class="pjclt-campo">
+
+                    <label for="plano-saude">
+                        Plano de saúde:
+                        <span>(opcional)</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="plano-saude"
+                        class="pjclt-input"
+                        placeholder="R$ 0,00"
+                        inputmode="numeric"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- OUTROS BENEFÍCIOS -->
+
+                <div class="pjclt-campo">
+
+                    <label for="outros-beneficios">
+
+                        Outros benefícios:
+                        <span>(opcional)</span>
+
+                        <i
+                            class="pjclt-info"
+                            title="Informe outros valores ou benefícios pagos pela empresa."
+                        >
+                            ?
+                        </i>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="outros-beneficios"
+                        class="pjclt-input"
+                        placeholder="R$ 0,00"
+                        inputmode="numeric"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 INFORMAÇÕES
+            ================================================== -->
+
+            <div class="pjclt-data">
+                Cálculo atualizado para 2026.
+            </div>
+
+
+            <div class="pjclt-disclaimer">
+
+                Ao utilizar esta ferramenta, você declara estar
+                ciente de que os valores apresentados são apenas
+                estimativas.
+
+            </div>
+
+
+            <!-- =================================================
+                 BOTÃO
+            ================================================== -->
+
+            <button
+                type="button"
+                id="btn-calcular-pj-clt"
+                class="pjclt-botao"
+            >
+                VER RESULTADO
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RESULTADO
+===================================================== -->
+
+<section
+    id="resultado-pj-clt"
+    class="pjclt-resultado"
+    style="display: none;"
+>
+
+    <h2>
+        Resultado do comparativo
+    </h2>
+
+
+    <!-- =================================================
+         COMPARAÇÃO
+    ================================================== -->
+
+    <div class="pjclt-comparacao">
+
+
+        <!-- ================= CLT ================= -->
+
+        <div class="pjclt-card">
+
+            <div class="pjclt-card-titulo">
+
+                <strong>CLT</strong>
+
+                <span>
+                    (Pessoa física)
+                </span>
+
+            </div>
+
+
+            <div class="pjclt-linhas">
+
+
+                <div class="pjclt-linha">
+
+                    <span>
+                        Salário bruto
+                    </span>
+
+                    <strong id="resultado-clt-bruto">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+
+                <div class="pjclt-linha">
+
+                    <span>
+
+                        (-) Descontos
+
+                        <i
+                            class="pjclt-info"
+                            title="INSS e IRRF estimados."
+                        >
+                            ?
+                        </i>
+
+                    </span>
+
+                    <strong id="resultado-clt-descontos">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+
+                <div class="pjclt-linha pjclt-beneficio-linha">
+
+                    <span>
+
+                        (+) Direitos CLT
+
+                        <i
+                            class="pjclt-info"
+                            title="13º salário, férias + 1/3 e FGTS transformados em equivalente mensal."
+                        >
+                            ?
+                        </i>
+
+                    </span>
+
+                    <strong id="resultado-clt-obrigatorios">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+
+                <div class="pjclt-linha pjclt-beneficio-linha">
+
+                    <span>
+
+                        (+) Benefícios
+
+                        <i
+                            class="pjclt-info"
+                            title="VA/VR, VT, plano de saúde e outros benefícios informados."
+                        >
+                            ?
+                        </i>
+
+                    </span>
+
+                    <strong id="resultado-clt-outros">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="pjclt-total">
+
+                <span>
+                    Valor mensal equivalente
+                </span>
+
+                <strong id="resultado-clt-equivalente">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= X ================= -->
+
+        <div class="pjclt-x">
+            X
+        </div>
+
+
+        <!-- ================= PJ ================= -->
+
+        <div class="pjclt-card">
+
+            <div class="pjclt-card-titulo">
+
+                <strong>PJ</strong>
+
+                <span>
+                    (Pessoa jurídica)
+                </span>
+
+            </div>
+
+
+            <div class="pjclt-linhas">
+
+
+                <div class="pjclt-linha">
+
+                    <span>
+                        Faturamento bruto
+                    </span>
+
+                    <strong id="resultado-pj-bruto">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+
+                <div class="pjclt-linha">
+
+                    <span>
+
+                        (-) Descontos
+
+                        <i
+                            class="pjclt-info"
+                            title="Impostos e INSS considerados pela metodologia da calculadora."
+                        >
+                            ?
+                        </i>
+
+                    </span>
+
+                    <strong id="resultado-pj-descontos">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+
+                <div class="pjclt-linha pjclt-vazio">
+
+                    <span>
+                        (+) Benefícios
+                    </span>
+
+                    <strong>
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="pjclt-linha pjclt-vazio">
+
+                    <span>
+                        (+) Outros benefícios
+                    </span>
+
+                    <strong>
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="pjclt-total">
+
+                <span>
+                    Valor disponível
+                </span>
+
+                <strong id="resultado-pj-equivalente">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         DESTAQUE
+    ================================================== -->
+
+    <div class="pjclt-destaque">
+
+        <div class="pjclt-destaque-texto">
+
+            Confira o valor bruto que você deve receber
+            como PJ para ter uma remuneração mensal equivalente
+            à sua remuneração CLT.
+
+        </div>
+
+
+        <div class="pjclt-destaque-valor">
+
+            <span>
+                Faturamento PJ necessário
+            </span>
+
+            <strong id="resultado-pj-necessario">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         PERCENTUAL
+    ================================================== -->
+
+    <div class="pjclt-percentual">
+
+        Isso representa aproximadamente
+
+        <strong id="resultado-percentual">
+            0%
+        </strong>
+
+        a mais que o seu salário bruto CLT.
+
+    </div>
+
+
+    <!-- =================================================
+         EXPLICAÇÃO
+    ================================================== -->
+
+    <div class="pjclt-detalhamento">
+
+        <h3>
+            Como chegamos ao resultado?
+        </h3>
+
+
+        <div class="pjclt-detalhamento-grid">
+
+
+            <div>
+
+                <strong>
+                    CLT
+                </strong>
+
+                <p>
+                    Consideramos o salário líquido após
+                    os descontos, os benefícios informados
+                    e os equivalentes de 13º, férias + 1/3
+                    e FGTS.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    PJ
+                </strong>
+
+                <p>
+                    Encontramos o faturamento necessário
+                    para alcançar o mesmo valor econômico,
+                    considerando os custos tributários da
+                    simulação.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         REFAZER
+    ================================================== -->
+
+    <button
+        type="button"
+        id="novo-calculo-pj-clt"
+        class="pjclt-novo-calculo"
+    >
+        REFAZER O CÁLCULO
+    </button>
+
+
+    <p class="pjclt-resultado-observacao">
+
+        Os valores apresentados são estimativas.
+
+        A tributação efetiva de uma PJ pode variar de acordo
+        com a atividade, regime tributário e demais
+        características da empresa.
+
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     COMO FUNCIONA
+===================================================== -->
+
+<section class="pjclt-como-funciona">
+
+    <h2>
+        Como o cálculo é feito?
+    </h2>
+
+
+    <div class="pjclt-explicacao">
+
+        <p>
+            A calculadora primeiro transforma sua remuneração
+            CLT em um valor mensal equivalente.
+        </p>
+
+
+        <ol>
+
+            <li>
+                <strong>Salário líquido:</strong>
+                salário bruto menos INSS e IRRF.
+            </li>
+
+            <li>
+                <strong>13º salário:</strong>
+                valor líquido estimado dividido por 12.
+            </li>
+
+            <li>
+                <strong>Férias + 1/3:</strong>
+                valor estimado do período de férias transformado
+                em média mensal.
+            </li>
+
+            <li>
+                <strong>FGTS:</strong>
+                equivalente mensal de 8% do salário bruto.
+            </li>
+
+            <li>
+                <strong>Benefícios:</strong>
+                VA/VR, VT, plano de saúde e outros valores
+                informados.
+            </li>
+
+        </ol>
+
+
+        <p>
+            Com esse valor, a ferramenta calcula quanto
+            você precisaria faturar como PJ para alcançar
+            uma remuneração econômica equivalente.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script
+    src="{{ url_for('static', filename='js/calculadora-pj-clt.js') }}?v=4"
+></script>
+
+{% endblock %}

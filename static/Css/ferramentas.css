@@ -759,3 +759,923 @@
     }
 
 }
+
+/* =========================================================
+   CALCULADORA PJ X CLT
+========================================================= */
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.pjclt-breadcrumb {
+
+    width: min(1180px, 90%);
+
+    margin: 25px auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 14px;
+
+    color: #555;
+
+}
+
+.pjclt-breadcrumb a {
+
+    color: #0B3B91;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
+
+.pjclt-breadcrumb strong {
+
+    color: #333;
+
+}
+
+
+/* =========================================================
+   INTRODUÇÃO
+========================================================= */
+
+.pjclt-introducao {
+
+    width: min(900px, 90%);
+
+    margin: 25px auto 30px;
+
+    text-align: center;
+
+}
+
+.pjclt-introducao h1 {
+
+    margin: 0 0 10px;
+
+    color: #0B3B91;
+
+    font-size: 34px;
+
+}
+
+.pjclt-introducao p {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+
+.pjclt-box {
+
+    width: min(890px, 90%);
+
+    margin: 0 auto 50px;
+
+    padding: 30px 40px;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border: 1px solid #CBDCED;
+
+    border-radius: 7px;
+
+}
+
+.pjclt-box-conteudo h2 {
+
+    margin: 5px 0 25px;
+
+    text-align: center;
+
+    color: #0B3B91;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.pjclt-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    column-gap: 25px;
+
+    row-gap: 20px;
+
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.pjclt-campo label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #0B3B91;
+
+    font-size: 13px;
+
+}
+
+.pjclt-campo label span {
+
+    color: #555;
+
+}
+
+.pjclt-input {
+
+    width: 100%;
+
+    height: 40px;
+
+    box-sizing: border-box;
+
+    padding: 0 12px;
+
+    border: 1px solid #7894B5;
+
+    border-radius: 6px;
+
+    background: #fff;
+
+    color: #333;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: 0.2s;
+
+}
+
+.pjclt-input:focus {
+
+    border-color: #0B3B91;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(11, 59, 145, 0.08);
+
+}
+
+
+/* =========================================================
+   ÍCONE ?
+========================================================= */
+
+.pjclt-info {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 13px;
+
+    height: 13px;
+
+    margin-left: 3px;
+
+    border: 1px solid #AEC0D5;
+
+    border-radius: 50%;
+
+    color: #7894B5;
+
+    font-size: 9px;
+
+    font-style: normal;
+
+    font-weight: 700;
+
+    cursor: help;
+
+}
+
+
+/* =========================================================
+   DATA
+========================================================= */
+
+.pjclt-data {
+
+    margin-top: 22px;
+
+    color: #7894B5;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.pjclt-disclaimer {
+
+    max-width: 760px;
+
+    margin-top: 17px;
+
+    color: #7894B5;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+
+.pjclt-botao {
+
+    display: block;
+
+    width: 215px;
+
+    height: 36px;
+
+    margin: 28px auto 2px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #12DDE8;
+
+    color: #003B67;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.08);
+
+    transition: 0.2s;
+
+}
+
+.pjclt-botao:hover {
+
+    transform: translateY(-1px);
+
+    background: #0FD0DB;
+
+}
+
+
+/* =========================================================
+   RESULTADO
+========================================================= */
+
+.pjclt-resultado {
+
+    width: min(920px, 90%);
+
+    margin: 0 auto 70px;
+
+}
+
+.pjclt-resultado > h2 {
+
+    margin: 0 0 38px;
+
+    text-align: center;
+
+    color: #003B67;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   COMPARAÇÃO
+========================================================= */
+
+.pjclt-comparacao {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        30px
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.pjclt-card {
+
+    position: relative;
+
+    border: 1px solid #D3E1F0;
+
+    border-radius: 6px;
+
+    background: white;
+
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.pjclt-card-titulo {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: -16px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: baseline;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 185px;
+
+    height: 28px;
+
+    padding: 0 10px;
+
+    box-sizing: border-box;
+
+    border-radius: 6px;
+
+    background: #D9E8F8;
+
+    color: #003B67;
+
+}
+
+.pjclt-card-titulo strong {
+
+    font-size: 25px;
+
+    line-height: 28px;
+
+}
+
+.pjclt-card-titulo span {
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   LINHAS
+========================================================= */
+
+.pjclt-linhas {
+
+    padding-top: 28px;
+
+}
+
+.pjclt-linha {
+
+    min-height: 43px;
+
+    padding: 8px 22px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom: 1px solid #E5EDF5;
+
+}
+
+.pjclt-linha span {
+
+    color: #003B67;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+}
+
+.pjclt-linha strong {
+
+    color: #003B67;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   BENEFÍCIOS
+========================================================= */
+
+.pjclt-beneficio-linha {
+
+    min-height: 58px;
+
+}
+
+.pjclt-beneficio-linha span {
+
+    max-width: 140px;
+
+}
+
+
+/* =========================================================
+   VAZIO
+========================================================= */
+
+.pjclt-vazio {
+
+    color: #B7C5D4;
+
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.pjclt-total {
+
+    min-height: 40px;
+
+    padding: 0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    box-sizing: border-box;
+
+    border-radius: 0 0 6px 6px;
+
+    background: #607890;
+
+    color: white;
+
+}
+
+.pjclt-total span {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+.pjclt-total strong {
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   X
+========================================================= */
+
+.pjclt-x {
+
+    color: #D6E2EF;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   DESTAQUE
+========================================================= */
+
+.pjclt-destaque {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        250px;
+
+    margin-top: 22px;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    background: #D9E8F8;
+
+}
+
+.pjclt-destaque-texto {
+
+    padding: 16px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    color: #315C80;
+
+    font-size: 13px;
+
+    line-height: 1.35;
+
+}
+
+.pjclt-destaque-valor {
+
+    padding: 16px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    text-align: center;
+
+}
+
+.pjclt-destaque-valor span {
+
+    color: #315C80;
+
+    font-size: 11px;
+
+}
+
+.pjclt-destaque-valor strong {
+
+    color: #315C80;
+
+    font-size: 24px;
+
+}
+
+
+/* =========================================================
+   PERCENTUAL
+========================================================= */
+
+.pjclt-percentual {
+
+    margin: 18px 0 0;
+
+    text-align: center;
+
+    color: #67829B;
+
+    font-size: 13px;
+
+}
+
+.pjclt-percentual strong {
+
+    color: #0B3B91;
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================================
+   DETALHAMENTO
+========================================================= */
+
+.pjclt-detalhamento {
+
+    margin-top: 40px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #D7E3EF;
+
+}
+
+.pjclt-detalhamento h3 {
+
+    margin: 0 0 25px;
+
+    color: #0B3B91;
+
+    font-size: 19px;
+
+    text-align: center;
+
+}
+
+.pjclt-detalhamento-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+.pjclt-detalhamento-grid > div {
+
+    padding: 20px;
+
+    border: 1px solid #DCE6F0;
+
+    border-radius: 8px;
+
+    background: white;
+
+}
+
+.pjclt-detalhamento-grid strong {
+
+    color: #0B3B91;
+
+    font-size: 15px;
+
+}
+
+.pjclt-detalhamento-grid p {
+
+    margin: 10px 0 0;
+
+    color: #66798C;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   REFAZER
+========================================================= */
+
+.pjclt-novo-calculo {
+
+    display: block;
+
+    width: 210px;
+
+    height: 36px;
+
+    margin: 35px auto 20px;
+
+    border: 1px solid #CBDCED;
+
+    border-radius: 6px;
+
+    background: white;
+
+    color: #7691AA;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+.pjclt-novo-calculo:hover {
+
+    border-color: #0B3B91;
+
+    color: #0B3B91;
+
+}
+
+
+/* =========================================================
+   OBSERVAÇÃO
+========================================================= */
+
+.pjclt-resultado-observacao {
+
+    text-align: center;
+
+    color: #7894B5;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   COMO FUNCIONA
+========================================================= */
+
+.pjclt-como-funciona {
+
+    width: min(900px, 90%);
+
+    margin: 0 auto 80px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #D7E3EF;
+
+}
+
+.pjclt-como-funciona h2 {
+
+    margin: 25px 0;
+
+    color: #0B3B91;
+
+    font-size: 25px;
+
+}
+
+.pjclt-explicacao {
+
+    color: #52697F;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+}
+
+.pjclt-explicacao ol {
+
+    padding-left: 20px;
+
+}
+
+.pjclt-explicacao li {
+
+    margin-bottom: 10px;
+
+}
+
+.pjclt-explicacao strong {
+
+    color: #0B3B91;
+
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .pjclt-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .pjclt-comparacao {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .pjclt-x {
+
+        display: none;
+
+    }
+
+    .pjclt-destaque {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .pjclt-box {
+
+        width: 94%;
+
+        padding: 25px 20px;
+
+    }
+
+    .pjclt-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .pjclt-introducao h1 {
+
+        font-size: 29px;
+
+    }
+
+    .pjclt-detalhamento-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .pjclt-breadcrumb {
+
+        flex-wrap: wrap;
+
+        font-size: 12px;
+
+    }
+
+}
