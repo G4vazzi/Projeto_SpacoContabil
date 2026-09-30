@@ -1,0 +1,372 @@
+{% extends "Config/base.html" %}
+
+{% block title %}Calculadora RPA 2026{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/calculadora-rpa.css') }}">
+{% endblock %}
+
+{% block conteudo %}
+
+<section class="rpa-intro">
+    <span class="rpa-tag">CÁLCULO 2026</span>
+    <h1>Calculadora RPA 2026</h1>
+    <p>
+        Compare o valor líquido estimado de um profissional autônomo com um cenário de prestação de serviços por CNPJ.
+        A alíquota do ISS é consultada automaticamente na base nacional da NFS-e usando município, serviço e competência.
+    </p>
+</section>
+
+<section class="rpa-box">
+    <div class="rpa-box-inner">
+        <h2>Dados da prestação de serviço</h2>
+        <p class="rpa-subtitulo">Preencha os dados abaixo para montar os dois cenários.</p>
+
+        <div class="rpa-grid">
+            <div class="rpa-campo rpa-campo-full rpa-campo-valor">
+                <label for="rpa-valor-bruto">Valor bruto do serviço</label>
+                <input type="text" id="rpa-valor-bruto" class="rpa-input" placeholder="R$ 0,00" inputmode="decimal" autocomplete="off">
+            </div>
+
+            <div class="rpa-campo">
+                <label for="rpa-dependentes">Número de dependentes</label>
+                <input type="number" id="rpa-dependentes" class="rpa-input" min="0" max="30" value="0">
+            </div>
+
+            <div class="rpa-campo">
+                <label for="rpa-pensao">Pensão alimentícia dedutível</label>
+                <input type="text" id="rpa-pensao" class="rpa-input" placeholder="R$ 0,00" inputmode="decimal" autocomplete="off">
+            </div>
+
+            <div class="rpa-campo rpa-campo-full">
+                <label for="rpa-base-anterior">
+                    Base previdenciária já utilizada no mês
+                    <span class="rpa-info" title="Informe remunerações já consideradas para o INSS em outros vínculos no mesmo mês.">?</span>
+                </label>
+                <input type="text" id="rpa-base-anterior" class="rpa-input" placeholder="R$ 0,00" inputmode="decimal" autocomplete="off">
+                <small>Deixe em branco se não houver outro vínculo previdenciário no mês.</small>
+            </div>
+        </div>
+
+        <div class="rpa-separador"></div>
+
+        <div class="rpa-section-title">
+            <div>
+                <span>ISS AUTOMÁTICO</span>
+                <h3>Município e atividade</h3>
+            </div>
+            <p>A consulta usa o código IBGE do município e o Código de Tributação Nacional da NFS-e.</p>
+        </div>
+
+        <div class="rpa-grid">
+            <div class="rpa-campo">
+                <label for="rpa-uf">Estado</label>
+                <select id="rpa-uf" class="rpa-select">
+                    <option value="">Selecione o estado</option>
+                    <option value="AC">Acre</option><option value="AL">Alagoas</option><option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option><option value="BA">Bahia</option><option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option><option value="ES">Espírito Santo</option><option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option><option value="MT">Mato Grosso</option><option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option><option value="PA">Pará</option><option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option><option value="PE">Pernambuco</option><option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option><option value="RN">Rio Grande do Norte</option><option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option><option value="RR">Roraima</option><option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option><option value="SE">Sergipe</option><option value="TO">Tocantins</option>
+                </select>
+            </div>
+
+            <div class="rpa-campo">
+                <label for="rpa-municipio">Município onde o ISS é devido</label>
+                <select id="rpa-municipio" class="rpa-select" disabled>
+                    <option value="">Selecione primeiro o estado</option>
+                </select>
+                <small id="rpa-municipio-status"></small>
+            </div>
+
+            <div class="rpa-campo rpa-campo-full">
+                <label for="rpa-servico">Atividade / serviço prestado</label>
+                <select id="rpa-servico" class="rpa-select">
+                    <option value="">Selecione o serviço</option>
+                    <optgroup label="Tecnologia">
+                        <option value="01.01.01.000">Análise e desenvolvimento de sistemas</option>
+                        <option value="01.02.01.000">Programação</option>
+                        <option value="01.03.01.000">Processamento de dados</option>
+                        <option value="01.03.02.000">Armazenamento ou hospedagem de dados</option>
+                        <option value="01.04.01.000">Elaboração de programas de computador</option>
+                        <option value="01.06.01.000">Assessoria e consultoria em informática</option>
+                        <option value="01.07.01.000">Suporte técnico em informática</option>
+                    </optgroup>
+                    <optgroup label="Saúde">
+                        <option value="04.08.02.000">Fisioterapia</option>
+                        <option value="04.12.01.000">Odontologia</option>
+                        <option value="04.16.01.000">Psicologia</option>
+                    </optgroup>
+                    <optgroup label="Engenharia e consultoria">
+                        <option value="07.01.01.000">Engenharia e congêneres</option>
+                        <option value="07.01.04.000">Arquitetura e urbanismo</option>
+                        <option value="17.01.01.000">Assessoria ou consultoria de qualquer natureza</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="rpa-campo">
+                <label for="rpa-competencia">Competência</label>
+                <input type="month" id="rpa-competencia" class="rpa-input" min="2026-01" max="2026-12">
+                <small>Esta versão da calculadora está configurada para 2026.</small>
+            </div>
+
+            <div class="rpa-campo">
+                <label for="rpa-aplicar-iss">Aplicar ISS no cenário autônomo?</label>
+                <select id="rpa-aplicar-iss" class="rpa-select">
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+                <small>A incidência/retenção efetiva pode depender da situação cadastral do profissional e da legislação municipal.</small>
+            </div>
+        </div>
+
+        <div id="rpa-iss-status" class="rpa-iss-status rpa-hidden" aria-live="polite">
+            <div class="rpa-iss-status-topo">
+                <div>
+                    <span>Alíquota de ISS</span>
+                    <strong id="rpa-iss-aliquota">-</strong>
+                </div>
+                <span id="rpa-iss-badge" class="rpa-badge">Consultando</span>
+            </div>
+            <p id="rpa-iss-mensagem"></p>
+            <small id="rpa-iss-fonte"></small>
+        </div>
+
+        <div id="rpa-iss-alternativas-area" class="rpa-campo rpa-hidden">
+            <label for="rpa-iss-alternativas">A API retornou mais de uma alíquota. Selecione a aplicável:</label>
+            <select id="rpa-iss-alternativas" class="rpa-select"></select>
+        </div>
+
+        <div id="rpa-iss-manual-area" class="rpa-campo rpa-hidden">
+            <label for="rpa-iss-manual">Alíquota manual de ISS (%)</label>
+            <div class="rpa-percent-input">
+                <input type="number" id="rpa-iss-manual" class="rpa-input" min="0" max="5" step="0.01" placeholder="Ex.: 2,00">
+                <span>%</span>
+            </div>
+            <small>Use apenas quando a base nacional não retornar uma alíquota utilizável para a combinação selecionada.</small>
+        </div>
+
+        <div class="rpa-separador"></div>
+
+        <div class="rpa-section-title">
+            <div>
+                <span>CENÁRIO CNPJ</span>
+                <h3>Premissas do comparativo</h3>
+            </div>
+        </div>
+
+        <div class="rpa-grid">
+            <div class="rpa-campo">
+                <label for="rpa-cnpj-regime">Tributação estimada do CNPJ</label>
+                <select id="rpa-cnpj-regime" class="rpa-select">
+                    <option value="6">Simples Nacional - Anexo III (6%)</option>
+                    <option value="15.5">Simples Nacional - Anexo V (15,5%)</option>
+                    <option value="personalizado">Informar alíquota efetiva</option>
+                </select>
+            </div>
+
+            <div id="rpa-cnpj-aliquota-area" class="rpa-campo rpa-hidden">
+                <label for="rpa-cnpj-aliquota">Alíquota efetiva do DAS (%)</label>
+                <div class="rpa-percent-input">
+                    <input type="number" id="rpa-cnpj-aliquota" class="rpa-input" min="0" max="33" step="0.01" placeholder="6,00">
+                    <span>%</span>
+                </div>
+            </div>
+
+            <div class="rpa-campo">
+                <label for="rpa-cnpj-prolabore">Pró-labore mensal</label>
+                <input type="text" id="rpa-cnpj-prolabore" class="rpa-input" value="R$ 1.621,00" inputmode="decimal" autocomplete="off">
+                <small>Valor inicial baseado no salário mínimo de 2026.</small>
+            </div>
+        </div>
+
+        <div class="rpa-nota">
+            <i class="fa-solid fa-circle-info"></i>
+            <p>
+                A consulta automática informa a alíquota municipal cadastrada no Sistema Nacional da NFS-e.
+                Ela não substitui a análise da retenção do ISS para o caso concreto, nem considera custos contábeis e operacionais do CNPJ.
+            </p>
+        </div>
+
+        <button type="button" id="rpa-calcular" class="rpa-btn">CALCULAR E COMPARAR</button>
+    </div>
+</section>
+
+<section id="rpa-resultado" class="rpa-resultado rpa-hidden">
+    <div class="rpa-result-title">
+        <h2 id="rpa-comparativo-titulo">Resultado do comparativo</h2>
+        <p id="rpa-comparativo-subtitulo">Veja os descontos estimados em cada cenário.</p>
+    </div>
+
+    <div class="rpa-cards">
+        <article class="rpa-card rpa-card-autonomo">
+            <span>Autônomo</span>
+            <small>Ganho líquido</small>
+            <strong id="rpa-card-autonomo">R$ 0,00</strong>
+        </article>
+        <article class="rpa-card rpa-card-cnpj">
+            <span>Com CNPJ</span>
+            <small>Ganho líquido</small>
+            <strong id="rpa-card-cnpj">R$ 0,00</strong>
+        </article>
+    </div>
+
+    <div class="rpa-diferenca">
+        <span>Diferença de valor líquido</span>
+        <strong id="rpa-diferenca-valor">R$ 0,00</strong>
+        <p id="rpa-diferenca-texto"></p>
+    </div>
+
+    <div class="rpa-tabela">
+        <div class="rpa-tabela-head">
+            <div>Profissional Autônomo</div>
+            <div>Profissional com CNPJ</div>
+        </div>
+
+        <div class="rpa-row">
+            <div><span>Ganho bruto</span><strong id="rpa-autonomo-bruto">R$ 0,00</strong></div>
+            <div><span>Ganho bruto</span><strong id="rpa-cnpj-bruto">R$ 0,00</strong></div>
+        </div>
+
+        <div class="rpa-row rpa-row-label">
+            <div>Descontos</div><div>Descontos</div>
+        </div>
+
+        <div class="rpa-row">
+            <div><span>Imposto sobre faturamento (DAS)</span><strong>R$ 0,00</strong></div>
+            <div><span>DAS <small id="rpa-cnpj-das-pct"></small></span><strong id="rpa-cnpj-das">R$ 0,00</strong></div>
+        </div>
+
+        <div class="rpa-row">
+            <div><span>INSS</span><strong id="rpa-autonomo-inss">R$ 0,00</strong></div>
+            <div><span>INSS sobre pró-labore</span><strong id="rpa-cnpj-inss">R$ 0,00</strong></div>
+        </div>
+
+        <div class="rpa-row">
+            <div><span>Imposto de renda</span><strong id="rpa-autonomo-irrf">R$ 0,00</strong></div>
+            <div><span>Imposto de renda</span><strong id="rpa-cnpj-irrf">R$ 0,00</strong></div>
+        </div>
+
+        <div class="rpa-row">
+            <div><span>ISS <small id="rpa-autonomo-iss-pct"></small></span><strong id="rpa-autonomo-iss">R$ 0,00</strong></div>
+            <div><span>ISS</span><strong>Incluso no DAS*</strong></div>
+        </div>
+
+        <div class="rpa-row rpa-row-total">
+            <div><span>Total de descontos</span><strong id="rpa-autonomo-total">R$ 0,00</strong></div>
+            <div><span>Total de descontos</span><strong id="rpa-cnpj-total">R$ 0,00</strong></div>
+        </div>
+
+        <div class="rpa-row rpa-row-liquid">
+            <div><span>Ganho líquido com descontos</span><strong id="rpa-autonomo-liquido">R$ 0,00</strong></div>
+            <div><span>Ganho líquido com descontos</span><strong id="rpa-cnpj-liquido">R$ 0,00</strong></div>
+        </div>
+    </div>
+
+    <div class="rpa-premissas">
+        <strong>Premissas da simulação</strong>
+        <p id="rpa-premissas-texto"></p>
+        <p>*O cenário de CNPJ presume tributação pelo Simples Nacional conforme a alíquota escolhida. Situações especiais podem alterar o tratamento do ISS.</p>
+    </div>
+
+<!-- =====================================================
+ DADOS UTILIZADOS NO CÁLCULO
+===================================================== -->
+
+<div class="rpa-dados-utilizados">
+
+    <h3>
+        Dados utilizados no cálculo
+    </h3>
+
+
+    <div class="rpa-dados-grid">
+
+        <div>
+            <span>Município</span>
+
+            <strong id="rpa-dado-municipio">
+                -
+            </strong>
+        </div>
+
+
+        <div>
+            <span>Serviço</span>
+
+            <strong id="rpa-dado-servico">
+                -
+            </strong>
+        </div>
+
+
+        <div>
+            <span>Código do serviço</span>
+
+            <strong id="rpa-dado-codigo">
+                -
+            </strong>
+        </div>
+
+
+        <div>
+            <span>Alíquota de ISS</span>
+
+            <strong id="rpa-dado-iss">
+                -
+            </strong>
+        </div>
+
+
+        <div>
+            <span>Competência</span>
+
+            <strong id="rpa-dado-competencia">
+                -
+            </strong>
+        </div>
+
+
+        <div>
+            <span>Origem da alíquota</span>
+
+            <strong id="rpa-dado-origem">
+                -
+            </strong>
+        </div>
+
+    </div>
+
+
+    <div class="rpa-dados-fonte">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        <span id="rpa-dado-fonte">
+            -
+        </span>
+
+    </div>
+
+</div>
+
+    <button type="button" id="rpa-novo-calculo" class="rpa-btn-secundario">REFAZER O CÁLCULO</button>
+</section>
+
+<section class="rpa-rodape-aviso">
+    <i class="fa-solid fa-circle-info"></i>
+    <div>
+        <strong>Regras utilizadas nesta calculadora</strong>
+        <p>Esta versão utiliza parâmetros de INSS e IRRF de 2026 e consulta o ISS municipal para a competência informada.</p>
+        <p>O resultado é uma simulação e não substitui a apuração fiscal ou previdenciária do caso concreto.</p>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/calculadora-rpa.js') }}?v=4"></script>
+
+{% endblock %}

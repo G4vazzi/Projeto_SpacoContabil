@@ -1,0 +1,877 @@
+{% extends "Config/base.html" %}
+
+{% block title %}Calculadora Fator R{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ferramentas.css') }}">
+{% endblock %}
+
+{% block conteudo %}
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="fatorr-breadcrumb">
+
+    <a href="/">Home</a>
+    <span>›</span>
+
+    <a href="#">Ferramentas</a>
+    <span>›</span>
+
+    <strong>Calculadora Fator R</strong>
+
+</div>
+
+
+<!-- =====================================================
+     INTRODUÇÃO
+===================================================== -->
+
+<section class="fatorr-introducao">
+
+    <span class="fatorr-tag">
+        SIMPLES NACIONAL
+    </span>
+
+    <h1>
+        Calculadora Fator R
+    </h1>
+
+    <p>
+        Descubra o Fator R da sua empresa e verifique,
+        para atividades sujeitas a essa regra, se o resultado
+        direciona a tributação para o Anexo III ou Anexo V
+        do Simples Nacional.
+    </p>
+
+</section>
+
+<!-- =====================================================
+     CALCULADORA
+===================================================== -->
+
+<section class="fatorr-box">
+
+    <div class="fatorr-box-conteudo">
+
+        <h2>
+            Informe os dados da empresa
+        </h2>
+
+        <p class="fatorr-subtitulo">
+            Utilize os valores correspondentes ao período
+            considerado pela calculadora.
+        </p>
+
+
+        <!-- =================================================
+             ATIVIDADE
+        ================================================== -->
+
+        <div class="fatorr-campo fatorr-campo-completo">
+
+            <label for="fatorr-atividade">
+                Atividade da empresa:
+            </label>
+
+            <select
+                id="fatorr-atividade"
+                class="fatorr-select"
+            >
+
+                <option value="">
+                    Selecione a atividade
+                </option>
+
+                <option value="sujeita">
+                    Desenvolvimento de software
+                </option>
+
+                <option value="sujeita">
+                    Consultoria / Gestão / Administração
+                </option>
+
+                <option value="sujeita">
+                    Engenharia
+                </option>
+
+                <option value="sujeita">
+                    Arquitetura e Urbanismo
+                </option>
+
+                <option value="sujeita">
+                    Medicina
+                </option>
+
+                <option value="sujeita">
+                    Odontologia
+                </option>
+
+                <option value="sujeita">
+                    Psicologia
+                </option>
+
+                <option value="sujeita">
+                    Fisioterapia
+                </option>
+
+                <option value="sujeita">
+                    Medicina Veterinária
+                </option>
+
+                <option value="sujeita">
+                    Publicidade
+                </option>
+
+                <option value="sujeita">
+                    Representação Comercial
+                </option>
+
+                <option value="sujeita">
+                    Academias e atividades esportivas
+                </option>
+
+                <option value="sujeita">
+                    Design / Desenho
+                </option>
+
+                <option value="sujeita">
+                    Tradução / Interpretação
+                </option>
+
+                <option value="nao-sei">
+                    Outra atividade / Não sei
+                </option>
+
+            </select>
+
+            <small>
+                A atividade exercida interfere na aplicação do
+                Fator R. Nem todas as atividades do Simples
+                Nacional estão sujeitas a essa regra.
+            </small>
+
+        </div>
+
+
+        <!-- =================================================
+             TEMPO DE EMPRESA
+        ================================================== -->
+
+        <div class="fatorr-campo fatorr-campo-completo">
+
+            <label for="fatorr-tempo">
+                Tempo de atividade da empresa:
+            </label>
+
+            <select
+                id="fatorr-tempo"
+                class="fatorr-select"
+            >
+
+                <option value="">
+                    Selecione
+                </option>
+
+                <option value="1">
+                    Mês de abertura
+                </option>
+
+                <option value="2">
+                    2º mês de atividade
+                </option>
+
+                <option value="3">
+                    3º mês de atividade
+                </option>
+
+                <option value="4">
+                    4º mês de atividade
+                </option>
+
+                <option value="5">
+                    5º mês de atividade
+                </option>
+
+                <option value="6">
+                    6º mês de atividade
+                </option>
+
+                <option value="7">
+                    7º mês de atividade
+                </option>
+
+                <option value="8">
+                    8º mês de atividade
+                </option>
+
+                <option value="9">
+                    9º mês de atividade
+                </option>
+
+                <option value="10">
+                    10º mês de atividade
+                </option>
+
+                <option value="11">
+                    11º mês de atividade
+                </option>
+
+                <option value="12">
+                    12º mês de atividade
+                </option>
+
+                <option value="13">
+                    13º mês de atividade ou mais
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- =================================================
+             INFORMAÇÃO DO PERÍODO
+        ================================================== -->
+
+        <div
+            id="fatorr-periodo-info"
+            class="fatorr-periodo-info"
+            style="display: none;"
+        >
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <div>
+
+                <strong id="fatorr-periodo-titulo">
+                    Período considerado
+                </strong>
+
+                <p id="fatorr-periodo-texto">
+                Informe os valores correspondentes ao período.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             VALORES
+        ================================================== -->
+
+        <div class="fatorr-grid">
+
+
+            <!-- RECEITA -->
+
+            <div class="fatorr-campo">
+
+                <label for="fatorr-receita">
+
+                    <span id="fatorr-label-receita">
+                        Receita bruta
+                    </span>
+
+                    <i
+                        class="fatorr-info"
+                        title="Receita bruta considerada para o cálculo do Fator R."
+                    >
+                        ?
+                    </i>
+
+                </label>
+
+                <input
+                    type="text"
+                    id="fatorr-receita"
+                    class="fatorr-input"
+                    placeholder="R$ 0,00"
+                    inputmode="numeric"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- SALÁRIOS -->
+
+            <div class="fatorr-campo">
+
+                <label for="fatorr-salarios">
+
+                    Salários
+
+                    <i
+                        class="fatorr-info"
+                        title="Remunerações pagas a pessoas físicas decorrentes do trabalho."
+                    >
+                        ?
+                    </i>
+
+                </label>
+
+                <input
+                    type="text"
+                    id="fatorr-salarios"
+                    class="fatorr-input"
+                    placeholder="R$ 0,00"
+                    inputmode="numeric"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- PRÓ-LABORE -->
+
+            <div class="fatorr-campo">
+
+                <label for="fatorr-prolabore">
+
+                    Pró-labore
+
+                    <i
+                        class="fatorr-info"
+                        title="Informe o pró-labore pago no período considerado."
+                    >
+                        ?
+                    </i>
+
+                </label>
+
+                <input
+                    type="text"
+                    id="fatorr-prolabore"
+                    class="fatorr-input"
+                    placeholder="R$ 0,00"
+                    inputmode="numeric"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- FGTS -->
+
+            <div class="fatorr-campo">
+
+                <label for="fatorr-fgts">
+
+                    FGTS recolhido
+
+                    <i
+                        class="fatorr-info"
+                        title="Informe o FGTS efetivamente recolhido no período."
+                    >
+                        ?
+                    </i>
+
+                </label>
+
+                <input
+                    type="text"
+                    id="fatorr-fgts"
+                    class="fatorr-input"
+                    placeholder="R$ 0,00"
+                    inputmode="numeric"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- CPP -->
+
+            <div class="fatorr-campo">
+
+                <label for="fatorr-cpp">
+
+                    Contribuição patronal previdenciária
+
+                    <i
+                        class="fatorr-info"
+                        title="Informe a contribuição patronal previdenciária efetivamente recolhida e considerada no Fator R."
+                    >
+                        ?
+                    </i>
+
+                </label>
+
+                <input
+                    type="text"
+                    id="fatorr-cpp"
+                    class="fatorr-input"
+                    placeholder="R$ 0,00"
+                    inputmode="numeric"
+                    autocomplete="off"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             OBSERVAÇÃO
+        ================================================== -->
+
+        <div class="fatorr-observacao">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <p>
+                Para o cálculo da folha são considerados, entre
+                outros valores previstos na legislação, salários,
+                pró-labore, FGTS e contribuição patronal
+                previdenciária efetivamente recolhida.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             BOTÃO
+        ================================================== -->
+
+        <button
+            type="button"
+            id="fatorr-calcular"
+            class="fatorr-botao"
+        >
+
+            CALCULAR FATOR R
+
+        </button>
+
+
+        <p class="fatorr-aviso">
+
+            Resultado estimativo. O enquadramento tributário
+            depende da atividade efetivamente exercida e das
+            informações fiscais da empresa.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RESULTADO
+===================================================== -->
+
+<section
+    id="fatorr-resultado"
+    class="fatorr-resultado"
+    style="display: none;"
+>
+
+    <h2>
+        Resultado do Fator R
+    </h2>
+
+
+    <!-- =================================================
+         RESUMO
+    ================================================== -->
+
+    <div class="fatorr-resumo">
+
+        <div>
+
+            <span>
+                Receita considerada
+            </span>
+
+            <strong id="fatorr-resultado-receita">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Folha considerada
+            </span>
+
+            <strong id="fatorr-resultado-folha">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         FATOR R
+    ================================================== -->
+
+    <div class="fatorr-principal">
+
+        <span>
+            SEU FATOR R
+        </span>
+
+        <strong id="fatorr-percentual">
+            0,00%
+        </strong>
+
+        <p id="fatorr-situacao">
+            Resultado
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         BARRA
+    ================================================== -->
+
+    <div class="fatorr-barra-area">
+
+        <div class="fatorr-barra-labels">
+
+            <span>0%</span>
+
+            <span>28%</span>
+
+            <span>50%+</span>
+
+        </div>
+
+
+        <div class="fatorr-barra">
+
+            <div
+                id="fatorr-barra-preenchimento"
+                class="fatorr-barra-preenchimento"
+            ></div>
+
+            <div class="fatorr-limite"></div>
+
+            <div
+                id="fatorr-marcador"
+                class="fatorr-marcador"
+            ></div>
+
+        </div>
+
+
+        <div class="fatorr-legenda-limite">
+            Limite de 28%
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ANEXO
+    ================================================== -->
+
+    <div
+        id="fatorr-anexo-box"
+        class="fatorr-anexo-box"
+    >
+
+        <span>
+            ENQUADRAMENTO PELO FATOR R
+        </span>
+
+        <strong id="fatorr-anexo">
+            ANEXO III
+        </strong>
+
+        <p id="fatorr-anexo-texto">
+            Resultado igual ou superior a 28%.
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         META 28%
+    ================================================== -->
+
+    <div class="fatorr-meta">
+
+        <h3>
+            Análise do limite de 28%
+        </h3>
+
+
+        <div class="fatorr-meta-grid">
+
+
+            <div>
+
+                <span>
+                    Folha considerada
+                </span>
+
+                <strong id="fatorr-meta-atual">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Folha correspondente a 28%
+                </span>
+
+                <strong id="fatorr-meta-necessaria">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span id="fatorr-diferenca-label">
+                    Diferença
+                </span>
+
+                <strong id="fatorr-meta-diferenca">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         COMPOSIÇÃO DA FOLHA
+    ================================================== -->
+
+    <div class="fatorr-composicao">
+
+        <h3>
+            Composição da folha considerada
+        </h3>
+
+
+        <div class="fatorr-composicao-linha">
+
+            <span>Salários</span>
+
+            <strong id="fatorr-comp-salarios">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+
+        <div class="fatorr-composicao-linha">
+
+            <span>Pró-labore</span>
+
+            <strong id="fatorr-comp-prolabore">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+
+        <div class="fatorr-composicao-linha">
+
+            <span>FGTS</span>
+
+            <strong id="fatorr-comp-fgts">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+
+        <div class="fatorr-composicao-linha">
+
+            <span>Contribuição patronal</span>
+
+            <strong id="fatorr-comp-cpp">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+
+        <div class="fatorr-composicao-total">
+
+            <span>
+                Total
+            </span>
+
+            <strong id="fatorr-comp-total">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ATIVIDADE
+    ================================================== -->
+
+    <div
+        id="fatorr-alerta-atividade"
+        class="fatorr-alerta-atividade"
+        style="display: none;"
+    >
+
+        <i class="fa-solid fa-triangle-exclamation"></i>
+
+        <p>
+            A atividade selecionada não permite confirmar
+            automaticamente a aplicação do Fator R.
+            Verifique o CNAE e a atividade efetivamente
+            exercida antes de utilizar o resultado para
+            fins tributários.
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         REFAZER
+    ================================================== -->
+
+    <button
+        type="button"
+        id="fatorr-novo-calculo"
+        class="fatorr-novo-calculo"
+    >
+        REFAZER O CÁLCULO
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     EXPLICAÇÃO
+===================================================== -->
+
+<section class="fatorr-explicacao">
+
+    <h2>
+        O que é o Fator R?
+    </h2>
+
+    <p>
+        O Fator R é a relação entre a folha de salários,
+        incluindo os valores considerados pela legislação,
+        e a receita bruta da empresa no período aplicável.
+    </p>
+
+
+    <div class="fatorr-formula">
+
+        <span>Fator R =</span>
+
+        <div>
+
+            <strong>
+                Folha considerada
+            </strong>
+
+            <hr>
+
+            <strong>
+                Receita bruta
+            </strong>
+
+        </div>
+
+        <span>× 100</span>
+
+    </div>
+
+
+    <div class="fatorr-explicacao-grid">
+
+
+        <div>
+
+            <strong>
+                Fator R ≥ 28%
+            </strong>
+
+            <p>
+                Para atividades sujeitas ao Fator R,
+                a tributação é direcionada ao Anexo III.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Fator R &lt; 28%
+            </strong>
+
+            <p>
+                Para atividades sujeitas ao Fator R,
+                a tributação é direcionada ao Anexo V.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     AVISO DE VIGÊNCIA
+===================================================== -->
+
+<section class="fatorr-aviso-vigencia">
+
+    <i class="fa-solid fa-circle-info"></i>
+
+    <div>
+
+        <strong>
+            Regras utilizadas nesta calculadora
+        </strong>
+
+        <p>
+            Esta calculadora está configurada de acordo com
+            as regras do Fator R vigentes durante o ano de
+            <strong>2026</strong>.
+        </p>
+
+        <p>
+            A partir de
+            <strong>1º de janeiro de 2027</strong>,
+            entrarão em vigor alterações nas regras de
+            apuração do Fator R. Portanto, os resultados
+            desta versão não devem ser utilizados para
+            períodos de apuração a partir dessa data.
+        </p>
+
+    </div>
+
+</section>
+
+
+<script
+    src="{{ url_for('static', filename='js/calculadora-fator-r.js') }}?v=2"
+></script>
+
+{% endblock %}

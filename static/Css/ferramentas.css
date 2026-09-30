@@ -1679,3 +1679,3063 @@
     }
 
 }
+
+/* =========================================================
+   CALCULADORA FATOR R
+========================================================= */
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.fatorr-breadcrumb {
+
+    width: min(1100px, 90%);
+
+    margin: 25px auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 14px;
+
+    color: #555;
+
+}
+
+.fatorr-breadcrumb a {
+
+    color: #0B3B91;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
+
+.fatorr-breadcrumb strong {
+
+    color: #333;
+
+}
+
+
+/* =========================================================
+   INTRODUÇÃO
+========================================================= */
+
+.fatorr-introducao {
+
+    width: min(800px, 90%);
+
+    margin: 35px auto 35px;
+
+    text-align: center;
+
+}
+
+.fatorr-tag {
+
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    margin-bottom: 15px;
+
+    border-radius: 20px;
+
+    background: #FFF4B8;
+
+    color: #0B3B91;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+}
+
+.fatorr-introducao h1 {
+
+    margin: 0 0 15px;
+
+    color: #0B3B91;
+
+    font-size: 38px;
+
+}
+
+.fatorr-introducao p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #5F6F80;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   BOX
+========================================================= */
+
+.fatorr-box {
+
+    width: min(900px, 90%);
+
+    margin: 0 auto 60px;
+
+    background: white;
+
+    border: 1px solid #D9E3EF;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(11, 59, 145, 0.08);
+
+}
+
+.fatorr-box-conteudo {
+
+    padding: 38px 45px;
+
+}
+
+.fatorr-box h2 {
+
+    margin: 0 0 7px;
+
+    text-align: center;
+
+    color: #0B3B91;
+
+    font-size: 22px;
+
+}
+
+.fatorr-subtitulo {
+
+    margin: 0 0 30px;
+
+    text-align: center;
+
+    color: #718096;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.fatorr-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px 25px;
+
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.fatorr-campo {
+
+    margin-bottom: 5px;
+
+}
+
+.fatorr-campo-completo {
+
+    margin-bottom: 22px;
+
+}
+
+.fatorr-campo label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #243B53;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+.fatorr-input,
+.fatorr-select {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #C7D5E5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #333;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+
+}
+
+.fatorr-input:focus,
+.fatorr-select:focus {
+
+    border-color: #0B3B91;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(11, 59, 145, 0.08);
+
+}
+
+.fatorr-campo small {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #7B8FA5;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.fatorr-info {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 14px;
+
+    height: 14px;
+
+    margin-left: 4px;
+
+    border: 1px solid #9DB0C5;
+
+    border-radius: 50%;
+
+    color: #7894B5;
+
+    font-size: 9px;
+
+    font-style: normal;
+
+    cursor: help;
+
+}
+
+
+/* =========================================================
+   PERÍODO
+========================================================= */
+
+.fatorr-periodo-info {
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    margin: 5px 0 25px;
+
+    padding: 16px 18px;
+
+    border-radius: 10px;
+
+    background: #EEF6FF;
+
+    color: #315C80;
+
+}
+
+.fatorr-periodo-info > i {
+
+    margin-top: 2px;
+
+    color: #0B3B91;
+
+}
+
+.fatorr-periodo-info strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 13px;
+
+}
+
+.fatorr-periodo-info p {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   OBSERVAÇÃO
+========================================================= */
+
+.fatorr-observacao {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    padding: 15px 18px;
+
+    border-left: 4px solid #FFD700;
+
+    border-radius: 8px;
+
+    background: #FFF9DD;
+
+    color: #645B25;
+
+}
+
+.fatorr-observacao i {
+
+    margin-top: 3px;
+
+    color: #C7A800;
+
+}
+
+.fatorr-observacao p {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+
+.fatorr-botao {
+
+    display: block;
+
+    width: 250px;
+
+    height: 48px;
+
+    margin: 30px auto 0;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #FFD700;
+
+    color: #0B3B91;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+.fatorr-botao:hover {
+
+    background: #F2CB00;
+
+    transform: translateY(-1px);
+
+}
+
+.fatorr-aviso {
+
+    max-width: 600px;
+
+    margin: 15px auto 0;
+
+    text-align: center;
+
+    color: #8796A8;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   RESULTADO
+========================================================= */
+
+.fatorr-resultado {
+
+    width: min(900px, 90%);
+
+    margin: 0 auto 70px;
+
+}
+
+.fatorr-resultado > h2 {
+
+    margin: 0 0 25px;
+
+    text-align: center;
+
+    color: #0B3B91;
+
+    font-size: 24px;
+
+}
+
+
+/* =========================================================
+   RESUMO
+========================================================= */
+
+.fatorr-resumo {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+.fatorr-resumo > div {
+
+    padding: 18px 20px;
+
+    border: 1px solid #DCE6F0;
+
+    border-radius: 10px;
+
+    background: white;
+
+}
+
+.fatorr-resumo span {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #7A8FA5;
+
+    font-size: 11px;
+
+}
+
+.fatorr-resumo strong {
+
+    color: #0B3B91;
+
+    font-size: 19px;
+
+}
+
+
+/* =========================================================
+   FATOR PRINCIPAL
+========================================================= */
+
+.fatorr-principal {
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 14px;
+
+    background: #0B3B91;
+
+    color: white;
+
+}
+
+.fatorr-principal > span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    opacity: 0.8;
+
+}
+
+.fatorr-principal > strong {
+
+    display: block;
+
+    color: #FFD700;
+
+    font-size: 48px;
+
+}
+
+.fatorr-principal p {
+
+    margin: 8px 0 0;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   BARRA
+========================================================= */
+
+.fatorr-barra-area {
+
+    margin: 35px 15px;
+
+}
+
+.fatorr-barra-labels {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    color: #718096;
+
+    font-size: 10px;
+
+}
+
+.fatorr-barra {
+
+    position: relative;
+
+    height: 12px;
+
+    border-radius: 20px;
+
+    background: #E1E9F1;
+
+}
+
+.fatorr-barra-preenchimento {
+
+    width: 0;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: #0B3B91;
+
+    transition: width 0.5s;
+
+}
+
+.fatorr-limite {
+
+    position: absolute;
+
+    top: -5px;
+
+    bottom: -5px;
+
+    left: 56%;
+
+    width: 2px;
+
+    background: #FFD700;
+
+}
+
+.fatorr-marcador {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 0;
+
+    width: 18px;
+
+    height: 18px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border: 3px solid white;
+
+    border-radius: 50%;
+
+    background: #0B3B91;
+
+    box-shadow:
+        0 2px 6px
+        rgba(0,0,0,.2);
+
+    transition: left 0.5s;
+
+}
+
+.fatorr-legenda-limite {
+
+    margin-top: 7px;
+
+    margin-left: 56%;
+
+    transform: translateX(-50%);
+
+    width: max-content;
+
+    color: #9A8400;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   ANEXO
+========================================================= */
+
+.fatorr-anexo-box {
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+}
+
+.fatorr-anexo-box > span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .7px;
+
+}
+
+.fatorr-anexo-box > strong {
+
+    display: block;
+
+    font-size: 28px;
+
+}
+
+.fatorr-anexo-box p {
+
+    margin: 7px auto 0;
+
+    max-width: 600px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+.fatorr-anexo-iii {
+
+    background: #EAF8EF;
+
+    color: #237442;
+
+}
+
+.fatorr-anexo-v {
+
+    background: #FFF4E5;
+
+    color: #9A5C00;
+
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.fatorr-meta {
+
+    margin-top: 35px;
+
+}
+
+.fatorr-meta h3 {
+
+    color: #0B3B91;
+
+    font-size: 18px;
+
+}
+
+.fatorr-meta-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+.fatorr-meta-grid > div {
+
+    padding: 17px;
+
+    border: 1px solid #DCE6F0;
+
+    border-radius: 9px;
+
+    background: white;
+
+}
+
+.fatorr-meta-grid span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #718096;
+
+    font-size: 10px;
+
+}
+
+.fatorr-meta-grid strong {
+
+    color: #0B3B91;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   COMPOSIÇÃO
+========================================================= */
+
+.fatorr-composicao {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border: 1px solid #DCE6F0;
+
+    border-radius: 12px;
+
+    background: white;
+
+}
+
+.fatorr-composicao h3 {
+
+    margin: 0 0 15px;
+
+    color: #0B3B91;
+
+    font-size: 17px;
+
+}
+
+.fatorr-composicao-linha,
+.fatorr-composicao-total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #EDF1F5;
+
+    color: #52697F;
+
+    font-size: 13px;
+
+}
+
+.fatorr-composicao-total {
+
+    margin-top: 4px;
+
+    border-bottom: none;
+
+    color: #0B3B91;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   ALERTA ATIVIDADE
+========================================================= */
+
+.fatorr-alerta-atividade {
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    padding: 17px;
+
+    border-left: 4px solid #FFD700;
+
+    border-radius: 8px;
+
+    background: #FFF9DD;
+
+    color: #645B25;
+
+}
+
+.fatorr-alerta-atividade p {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   NOVO CÁLCULO
+========================================================= */
+
+.fatorr-novo-calculo {
+
+    display: block;
+
+    width: 220px;
+
+    height: 42px;
+
+    margin: 30px auto 0;
+
+    border: 1px solid #0B3B91;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #0B3B91;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+.fatorr-novo-calculo:hover {
+
+    background: #0B3B91;
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   EXPLICAÇÃO
+========================================================= */
+
+.fatorr-explicacao {
+
+    width: min(900px, 90%);
+
+    margin: 0 auto 80px;
+
+}
+
+.fatorr-explicacao h2 {
+
+    color: #0B3B91;
+
+    font-size: 27px;
+
+}
+
+.fatorr-explicacao > p {
+
+    color: #5F7185;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   FÓRMULA
+========================================================= */
+
+.fatorr-formula {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin: 30px 0;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    background: #EEF6FF;
+
+    color: #0B3B91;
+
+    font-weight: 700;
+
+}
+
+.fatorr-formula div {
+
+    text-align: center;
+
+}
+
+.fatorr-formula hr {
+
+    border: none;
+
+    border-top: 2px solid #0B3B91;
+
+}
+
+
+/* =========================================================
+   EXPLICAÇÃO GRID
+========================================================= */
+
+.fatorr-explicacao-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+.fatorr-explicacao-grid > div {
+
+    padding: 22px;
+
+    border: 1px solid #DCE6F0;
+
+    border-radius: 10px;
+
+    background: white;
+
+}
+
+.fatorr-explicacao-grid strong {
+
+    color: #0B3B91;
+
+}
+
+.fatorr-explicacao-grid p {
+
+    margin-bottom: 0;
+
+    color: #65798D;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .fatorr-box-conteudo {
+
+        padding: 28px 20px;
+
+    }
+
+    .fatorr-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .fatorr-resumo {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .fatorr-meta-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .fatorr-explicacao-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .fatorr-introducao h1 {
+
+        font-size: 31px;
+
+    }
+
+    .fatorr-principal > strong {
+
+        font-size: 40px;
+
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .fatorr-breadcrumb {
+
+        flex-wrap: wrap;
+
+        font-size: 12px;
+
+    }
+
+    .fatorr-formula {
+
+        gap: 10px;
+
+        padding: 20px 10px;
+
+        font-size: 12px;
+
+    }
+
+    .fatorr-botao {
+
+        width: 100%;
+
+    }
+
+}
+
+/* =========================================================
+   AVISO DE VIGÊNCIA - FATOR R
+========================================================= */
+
+.fatorr-vigencia {
+
+    width: min(900px, 90%);
+
+    margin: 0 auto 30px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 22px 25px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #D4E2F0;
+
+    border-radius: 14px;
+
+    background: #FFFFFF;
+
+}
+
+
+.fatorr-vigencia-icone {
+
+    flex-shrink: 0;
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #EEF6FF;
+
+    color: #0B3B91;
+
+    font-size: 18px;
+
+}
+
+
+.fatorr-vigencia-conteudo {
+
+    flex: 1;
+
+}
+
+
+.fatorr-vigencia-conteudo > strong {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #0B3B91;
+
+    font-size: 14px;
+
+}
+
+
+.fatorr-vigencia-conteudo > p {
+
+    margin: 0 0 14px;
+
+    color: #61758A;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+.fatorr-vigencia-alerta {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 12px 14px;
+
+    border-left: 4px solid #FFD700;
+
+    border-radius: 6px;
+
+    background: #FFF9DD;
+
+    color: #655C25;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+}
+
+
+.fatorr-vigencia-alerta i {
+
+    margin-top: 3px;
+
+    color: #B89B00;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .fatorr-vigencia {
+
+        padding: 18px;
+
+    }
+
+    .fatorr-vigencia-icone {
+
+        display: none;
+
+    }
+
+}
+
+/* =========================================================
+   AVISO DE VIGÊNCIA - FATOR R
+========================================================= */
+
+.fatorr-aviso-vigencia {
+
+    width: min(900px, 90%);
+
+    margin: 0 auto 45px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 18px 22px;
+
+    box-sizing: border-box;
+
+    border-top: 1px solid #D9E3EF;
+
+    border-bottom: 1px solid #D9E3EF;
+
+    color: #66788A;
+
+}
+
+
+.fatorr-aviso-vigencia > i {
+
+    margin-top: 3px;
+
+    color: #0B3B91;
+
+    font-size: 15px;
+
+}
+
+
+.fatorr-aviso-vigencia div {
+
+    flex: 1;
+
+}
+
+
+.fatorr-aviso-vigencia strong {
+
+    color: #40566D;
+
+}
+
+
+.fatorr-aviso-vigencia div > strong {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #0B3B91;
+
+    font-size: 12px;
+
+}
+
+
+.fatorr-aviso-vigencia p {
+
+    margin: 4px 0;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 600px) {
+
+    .fatorr-aviso-vigencia {
+
+        padding: 16px 5px;
+
+        gap: 10px;
+
+    }
+
+}
+
+/* =========================================================
+   CALCULADORA RPA 2026
+========================================================= */
+
+
+/* INTRODUÇÃO */
+
+.rpa-introducao {
+
+    width: min(800px, 90%);
+    margin: 40px auto 35px;
+    text-align: center;
+
+}
+
+
+.rpa-tag {
+
+    display: inline-block;
+
+    padding: 7px 14px;
+    margin-bottom: 14px;
+
+    border-radius: 20px;
+
+    background: #FFF4B8;
+    color: #0B3B91;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .8px;
+
+}
+
+
+.rpa-introducao h1 {
+
+    margin: 0 0 15px;
+
+    color: #0B3B91;
+    font-size: 38px;
+
+}
+
+
+.rpa-introducao p {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #64778A;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   BOX
+========================================================= */
+
+.rpa-box {
+
+    width: min(900px, 90%);
+
+    margin: 0 auto 60px;
+
+    background: white;
+
+    border: 1px solid #D9E3EF;
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(11, 59, 145, .08);
+
+}
+
+
+.rpa-box-conteudo {
+
+    padding: 38px 45px;
+
+}
+
+
+.rpa-box h2 {
+
+    margin: 0 0 7px;
+
+    text-align: center;
+
+    color: #0B3B91;
+
+    font-size: 22px;
+
+}
+
+
+.rpa-subtitulo {
+
+    margin: 0 0 30px;
+
+    text-align: center;
+
+    color: #788A9D;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.rpa-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 23px 25px;
+
+}
+
+
+.rpa-campo {
+
+    min-width: 0;
+
+}
+
+
+.rpa-campo-destaque {
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.rpa-campo label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #243B53;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+.rpa-input,
+.rpa-select {
+
+    width: 100%;
+    height: 48px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid #C7D5E5;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #333;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: .2s;
+
+}
+
+
+.rpa-input:focus,
+.rpa-select:focus {
+
+    border-color: #0B3B91;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(11, 59, 145, .08);
+
+}
+
+
+.rpa-campo-destaque .rpa-input {
+
+    height: 55px;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #0B3B91;
+
+}
+
+
+.rpa-campo small {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #8393A4;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.rpa-info {
+
+    display: inline-flex;
+
+    width: 15px;
+    height: 15px;
+
+    margin-left: 4px;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid #A3B4C6;
+
+    border-radius: 50%;
+
+    color: #7089A3;
+
+    font-size: 9px;
+
+    cursor: help;
+
+}
+
+
+/* =========================================================
+   PERCENTUAL
+========================================================= */
+
+.rpa-percentual-input {
+
+    position: relative;
+
+}
+
+
+.rpa-percentual-input input {
+
+    padding-right: 42px;
+
+}
+
+
+.rpa-percentual-input span {
+
+    position: absolute;
+
+    right: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #778A9C;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   OBSERVAÇÃO
+========================================================= */
+
+.rpa-observacao {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    padding: 16px 18px;
+
+    border-left:
+        4px solid #FFD700;
+
+    border-radius: 8px;
+
+    background: #FFF9DD;
+
+    color: #675F2B;
+
+}
+
+
+.rpa-observacao i {
+
+    margin-top: 3px;
+
+}
+
+
+.rpa-observacao p {
+
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+
+.rpa-botao {
+
+    display: block;
+
+    width: 250px;
+    height: 48px;
+
+    margin: 30px auto 0;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #FFD700;
+
+    color: #0B3B91;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+
+.rpa-botao:hover {
+
+    transform:
+        translateY(-1px);
+
+    background: #F1CB00;
+
+}
+
+
+.rpa-aviso {
+
+    text-align: center;
+
+    margin-top: 12px;
+
+    color: #8998A8;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   RESULTADO
+========================================================= */
+
+.rpa-resultado {
+
+    width: min(900px, 90%);
+
+    margin: 0 auto 70px;
+
+}
+
+
+.rpa-resultado > h2 {
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #0B3B91;
+
+}
+
+
+/* PRINCIPAL */
+
+.rpa-resultado-principal {
+
+    padding: 32px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    background: #0B3B91;
+
+    color: white;
+
+}
+
+
+.rpa-resultado-principal span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    opacity: .75;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.rpa-resultado-principal strong {
+
+    display: block;
+
+    color: #FFD700;
+
+    font-size: 42px;
+
+}
+
+
+.rpa-resultado-principal p {
+
+    margin: 8px 0 0;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   RESUMO
+========================================================= */
+
+.rpa-resumo {
+
+    margin-top: 20px;
+
+    padding: 22px 25px;
+
+    border:
+        1px solid #DCE6F0;
+
+    border-radius: 12px;
+
+    background: white;
+
+}
+
+
+.rpa-resumo-linha,
+.rpa-resumo-total {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 12px 0;
+
+    border-bottom:
+        1px solid #EDF1F5;
+
+}
+
+
+.rpa-resumo-linha span {
+
+    color: #667A8E;
+
+    font-size: 13px;
+
+}
+
+
+.rpa-resumo-linha strong {
+
+    color: #364E65;
+
+    font-size: 13px;
+
+}
+
+
+.rpa-resumo-total {
+
+    margin-top: 4px;
+
+    border-bottom: none;
+
+    color: #0B3B91;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   DETALHAMENTO
+========================================================= */
+
+.rpa-detalhes {
+
+    margin-top: 28px;
+
+}
+
+
+.rpa-detalhes h3 {
+
+    color: #0B3B91;
+
+    font-size: 17px;
+
+}
+
+
+.rpa-detalhes-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+
+.rpa-detalhes-grid > div {
+
+    padding: 17px;
+
+    border:
+        1px solid #DCE6F0;
+
+    border-radius: 9px;
+
+    background: white;
+
+}
+
+
+.rpa-detalhes-grid span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #788A9D;
+
+    font-size: 10px;
+
+}
+
+
+.rpa-detalhes-grid strong {
+
+    color: #0B3B91;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   ALERTAS
+========================================================= */
+
+.rpa-alerta {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    padding: 17px;
+
+    border-left:
+        4px solid #FFD700;
+
+    border-radius: 8px;
+
+    background: #FFF9DD;
+
+    color: #655D28;
+
+}
+
+
+.rpa-alerta-azul {
+
+    border-left-color: #0B3B91;
+
+    background: #EEF6FF;
+
+    color: #365C80;
+
+}
+
+
+.rpa-alerta strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 12px;
+
+}
+
+
+.rpa-alerta p {
+
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   NOVO CÁLCULO
+========================================================= */
+
+.rpa-novo-calculo {
+
+    display: block;
+
+    width: 220px;
+    height: 42px;
+
+    margin: 30px auto 0;
+
+    border:
+        1px solid #0B3B91;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #0B3B91;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.rpa-novo-calculo:hover {
+
+    background: #0B3B91;
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   EXPLICAÇÃO
+========================================================= */
+
+.rpa-explicacao {
+
+    width: min(900px, 90%);
+
+    margin: 0 auto 60px;
+
+}
+
+
+.rpa-explicacao h2 {
+
+    color: #0B3B91;
+
+}
+
+
+.rpa-explicacao > p {
+
+    color: #63778B;
+
+    line-height: 1.7;
+
+}
+
+
+.rpa-explicacao-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 25px;
+
+}
+
+
+.rpa-explicacao-grid > div {
+
+    padding: 22px;
+
+    border:
+        1px solid #DCE6F0;
+
+    border-radius: 11px;
+
+    background: white;
+
+}
+
+
+.rpa-explicacao-grid > div > span {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #FFD000;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+}
+
+
+.rpa-explicacao-grid strong {
+
+    color: #0B3B91;
+
+}
+
+
+.rpa-explicacao-grid p {
+
+    color: #697C90;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   AVISO DE VIGÊNCIA
+========================================================= */
+
+.rpa-aviso-vigencia {
+
+    width: min(900px, 90%);
+
+    margin: 0 auto 45px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 18px 22px;
+
+    box-sizing: border-box;
+
+    border-top:
+        1px solid #D9E3EF;
+
+    border-bottom:
+        1px solid #D9E3EF;
+
+    color: #66788A;
+
+}
+
+
+.rpa-aviso-vigencia > i {
+
+    margin-top: 3px;
+
+    color: #0B3B91;
+
+}
+
+
+.rpa-aviso-vigencia div > strong {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #0B3B91;
+
+    font-size: 12px;
+
+}
+
+
+.rpa-aviso-vigencia p {
+
+    margin: 4px 0;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .rpa-box-conteudo {
+
+        padding: 28px 20px;
+
+    }
+
+
+    .rpa-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .rpa-campo-destaque {
+
+        grid-column: auto;
+
+    }
+
+
+    .rpa-detalhes-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .rpa-explicacao-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .rpa-introducao h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .rpa-detalhes-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .rpa-resultado-principal strong {
+
+        font-size: 34px;
+
+    }
+
+
+    .rpa-botao {
+
+        width: 100%;
+
+    }
+
+
+    .rpa-resumo-linha,
+    .rpa-resumo-total {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+
+    }
+
+}
+
+/* =========================================================
+   CONFIGURAÇÃO CNPJ
+========================================================= */
+
+.rpa-cnpj-config {
+
+    grid-column: 1 / -1;
+
+    margin-top: 10px;
+
+    padding: 22px;
+
+    border: 1px solid #D6E2F0;
+
+    border-radius: 12px;
+
+    background: #F7FAFF;
+
+}
+
+
+.rpa-cnpj-config-titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.rpa-cnpj-config-titulo > i {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #E5EEFF;
+
+    color: #0B3B91;
+
+}
+
+
+.rpa-cnpj-config-titulo strong {
+
+    display: block;
+
+    color: #0B3B91;
+
+    font-size: 14px;
+
+}
+
+
+.rpa-cnpj-config-titulo span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #74879A;
+
+    font-size: 11px;
+
+}
+
+
+.rpa-cnpj-config-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.rpa-cnpj-config-aviso {
+
+    margin: 16px 0 0;
+
+    color: #75879A;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   COMPARATIVO RPA
+========================================================= */
+
+.rpa-comparativo {
+
+    width: min(900px, 90%);
+
+}
+
+
+/* =========================================================
+   CHAMADA
+========================================================= */
+
+.rpa-comparativo-chamada {
+
+    margin-bottom: 30px;
+
+    text-align: center;
+
+}
+
+
+.rpa-comparativo-chamada h2 {
+
+    margin: 0 0 8px;
+
+    color: #0B3B91;
+
+    font-size: 27px;
+
+}
+
+
+.rpa-comparativo-chamada p {
+
+    margin: 0;
+
+    color: #74879A;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.rpa-comparativo-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 25px;
+
+}
+
+
+.rpa-comparativo-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    min-width: 0;
+
+    padding: 24px;
+
+    border: 1px solid #D3E0EF;
+
+    border-radius: 10px;
+
+    background: #FFFFFF;
+
+}
+
+
+.rpa-card-identificacao {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #0B3B91;
+
+}
+
+
+.rpa-card-identificacao strong {
+
+    white-space: nowrap;
+
+    font-size: 17px;
+
+}
+
+
+.rpa-card-ganho {
+
+    text-align: right;
+
+}
+
+
+.rpa-card-ganho span {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #71859A;
+
+    font-size: 10px;
+
+}
+
+
+.rpa-card-ganho strong {
+
+    display: block;
+
+    font-size: 29px;
+
+}
+
+
+.rpa-card-autonomo
+.rpa-card-ganho strong {
+
+    color: #E44B3D;
+
+}
+
+
+.rpa-card-cnpj
+.rpa-card-ganho strong {
+
+    color: #0EAF6D;
+
+}
+
+
+/* =========================================================
+   DIFERENÇA
+========================================================= */
+
+.rpa-diferenca {
+
+    margin: 22px 0 35px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    background: #F5F8FC;
+
+}
+
+
+.rpa-diferenca > span {
+
+    display: block;
+
+    color: #73869A;
+
+    font-size: 10px;
+
+}
+
+
+.rpa-diferenca > strong {
+
+    display: block;
+
+    margin: 5px 0;
+
+    color: #0B3B91;
+
+    font-size: 24px;
+
+}
+
+
+.rpa-diferenca p {
+
+    margin: 0;
+
+    color: #526B82;
+
+    font-size: 11px;
+
+}
+
+
+.rpa-diferenca-positiva {
+
+    color: #0EAF6D !important;
+
+}
+
+
+.rpa-diferenca-negativa {
+
+    color: #E44B3D !important;
+
+}
+
+
+/* =========================================================
+   TABELA COMPARATIVA
+========================================================= */
+
+.rpa-comparativo-detalhamento {
+
+    overflow: hidden;
+
+    border: 1px solid #D5E0EF;
+
+    border-radius: 10px;
+
+    background: white;
+
+}
+
+
+.rpa-comparativo-cabecalho {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+}
+
+
+.rpa-comparativo-cabecalho > div {
+
+    padding: 16px;
+
+    text-align: center;
+
+    color: #0B3B91;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+}
+
+
+.rpa-comparativo-cabecalho > div:first-child {
+
+    background: #F8FAFD;
+
+}
+
+
+.rpa-comparativo-cabecalho > div:last-child {
+
+    border-left: 1px solid #B9CBEA;
+
+    background: #E8EEF9;
+
+}
+
+
+/* =========================================================
+   LINHAS
+========================================================= */
+
+.rpa-comparativo-linha {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    border-top: 1px solid #D7E1EE;
+
+}
+
+
+.rpa-comparativo-linha > div {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    min-width: 0;
+
+    padding: 14px 17px;
+
+}
+
+
+.rpa-comparativo-linha > div:first-child {
+
+    background: #FAFBFD;
+
+}
+
+
+.rpa-comparativo-linha > div:last-child {
+
+    border-left: 1px solid #B9CBEA;
+
+    background: #EEF2FA;
+
+}
+
+
+.rpa-comparativo-linha span {
+
+    color: #30475F;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+}
+
+
+.rpa-comparativo-linha span small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #8091A4;
+
+    font-size: 9px;
+
+}
+
+
+.rpa-comparativo-linha strong {
+
+    flex-shrink: 0;
+
+    color: #30475F;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   DESCONTOS
+========================================================= */
+
+.rpa-linha-titulo > div {
+
+    justify-content: flex-start;
+
+    color: #0B3B91;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.rpa-linha-total span,
+.rpa-linha-total strong {
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   LÍQUIDO
+========================================================= */
+
+.rpa-linha-liquido > div {
+
+    min-height: 58px;
+
+}
+
+
+.rpa-linha-liquido > div:first-child {
+
+    background: #F3F6FA;
+
+}
+
+
+.rpa-linha-liquido > div:last-child {
+
+    background: #0B3B91;
+
+}
+
+
+.rpa-linha-liquido > div:last-child span,
+.rpa-linha-liquido > div:last-child strong {
+
+    color: white;
+
+}
+
+
+.rpa-linha-liquido strong {
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   PREMISSAS
+========================================================= */
+
+.rpa-comparativo-premissas {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 22px;
+
+    padding: 17px 19px;
+
+    border-left: 4px solid #FFD700;
+
+    border-radius: 8px;
+
+    background: #FFF9DD;
+
+    color: #625B2E;
+
+}
+
+
+.rpa-comparativo-premissas i {
+
+    margin-top: 3px;
+
+}
+
+
+.rpa-comparativo-premissas strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 11px;
+
+}
+
+
+.rpa-comparativo-premissas p {
+
+    margin: 3px 0;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .rpa-cnpj-config-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .rpa-comparativo-cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .rpa-comparativo-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .rpa-card-ganho {
+
+        text-align: left;
+
+    }
+
+
+    .rpa-comparativo-cabecalho > div {
+
+        padding: 13px 8px;
+
+        font-size: 11px;
+
+    }
+
+
+    .rpa-comparativo-linha > div {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 13px 10px;
+
+        gap: 6px;
+
+    }
+
+
+    .rpa-comparativo-linha strong {
+
+        font-size: 10px;
+
+    }
+
+
+    .rpa-comparativo-linha span {
+
+        font-size: 10px;
+
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .rpa-card-ganho strong {
+
+        font-size: 25px;
+
+    }
+
+
+    .rpa-comparativo-chamada h2 {
+
+        font-size: 22px;
+
+    }
+
+}
+
+/* =========================================================
+   ISS AUTOMÁTICO
+========================================================= */
+
+.rpa-iss-automatico {
+
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 17px 20px;
+
+    border: 1px solid #CFE0EF;
+
+    border-radius: 10px;
+
+    background: #F4F9FF;
+
+}
+
+
+.rpa-iss-automatico span {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #6D8094;
+
+    font-size: 10px;
+
+}
+
+
+.rpa-iss-automatico strong {
+
+    color: #0B3B91;
+
+    font-size: 22px;
+
+}
+
+
+.rpa-iss-automatico small {
+
+    max-width: 420px;
+
+    color: #71869A;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+}
