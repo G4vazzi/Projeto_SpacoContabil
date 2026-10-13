@@ -34,7 +34,7 @@
 
     padding: 80px 7%;
 
-    background-image: url('/static/Img/Background-others.png');
+    background-image: url('/static/Img/Background_01.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -450,6 +450,11 @@
         );
 
     text-align: center;
+
+    background-image: url('/static/Img/Background_02.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .escolher-hero-conteudo {
