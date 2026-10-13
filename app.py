@@ -13,7 +13,9 @@ from Routes.sobre_rt import sobre_bp
 from Routes.tools_rt import tools_bp
 from Routes.contato_rt import contato_bp
 
-app=Flask(__name__)
+app=Flask(__name__,
+            template_folder='Templates',
+            )
 
 app.register_blueprint(home_bp)
 app.register_blueprint(service_bp)
