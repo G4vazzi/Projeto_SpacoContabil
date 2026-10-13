@@ -21,5 +21,12 @@ app.register_blueprint(sobre_bp)
 app.register_blueprint(tools_bp)
 app.register_blueprint(contato_bp)
 
+@app.route("/health")
+def health():
+    return {
+        "status": "ok",
+        "aplicacao": "Spaco Contabil"
+    }, 200
+
 if __name__=="__main__":
     app.run(debug=True)
