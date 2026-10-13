@@ -868,3 +868,11 @@ footer {
 
     background: #FFD700;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+#servicos {
+    scroll-margin-top: 100px;
+}

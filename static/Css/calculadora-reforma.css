@@ -1,0 +1,56 @@
+/* SpacoContábil — Calculadora da Reforma Tributária */
+.rtc-pagina { width: min(1100px, 92%); margin: 0 auto 72px; font-family: Arial, sans-serif; color: #263e57; }
+.rtc-pagina * { box-sizing: border-box; }
+.rtc-pagina [hidden] { display: none !important; }
+.rtc-intro { max-width: 780px; margin: 44px auto 32px; text-align: center; }
+.rtc-tag { display: inline-block; font-weight: 800; background: #fff4bd; border-radius: 30px; color: #0b3b91; font-size: 11px; letter-spacing: 0.7px; padding: 8px 15px; }
+.rtc-intro h1 { font-size: clamp(28px, 4vw, 38px); margin: 16px 0 12px; line-height: 1.14; color: #0b3b91; }
+.rtc-intro p { font-size: 15px; line-height: 1.7; color: #60758d; }
+.rtc-card { border: 1px solid #dce6f0; border-radius: 16px; background: white; box-shadow: 0 9px 30px rgba(8, 40, 90, .045); }
+.rtc-form-card { padding: clamp(22px, 4vw, 43px); }
+.rtc-card h2,.rtc-resultado h2,.rtc-explicacao h2 { font-size: 23px; color: #0b3b91; margin: 0 0 15px; }
+.rtc-card h3,.rtc-explicacao h3 { color: #0b3b91; font-size: 17px; margin: 0 0 12px; }
+.rtc-muted { font-size: 12px; color: #6f8195; line-height: 1.65; margin: 7px 0 20px; }
+.rtc-campos { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 25px; row-gap: 21px; }
+.rtc-campo { min-width: 0; }
+.rtc-campo-inteiro { grid-column: 1 / -1; }
+.rtc-campo label { display:block; color:#243d58; font-size:13px; font-weight:700; margin:0 0 8px; }
+.rtc-campo input,.rtc-campo select { appearance: auto; background:#fff; border:1px solid #c6d3e2; border-radius:9px; width:100%; height:49px; padding:0 14px; color:#20334b; font: 15px Arial,sans-serif; }
+.rtc-campo input:focus,.rtc-campo select:focus { outline:2px solid rgba(11,59,145,.17); border-color:#0b3b91; }
+.rtc-campo input:disabled { background:#f4f6fa; color:#8493a6; cursor:not-allowed; }
+.rtc-campo small { display:block; margin-top:6px; line-height:1.5; font-size:11px; color:#78899c; }
+.rtc-separador { height:1px; background:#e6edf5; margin:31px 0 27px; }
+.rtc-botao { display:block; margin:26px auto 0; background:#ffd700; color:#092d6d; padding:16px 25px; border:0; border-radius:10px; min-width:260px; font-size:13px; font-weight:800; cursor:pointer; transition:background .15s; }
+.rtc-botao:hover { background:#f2cb00; }
+.rtc-erro { padding:13px 17px; border-radius:7px; color:#8a2733; background:#ffeff0; margin-top:20px; font-size:13px; }
+.rtc-resultado { max-width:1030px; margin:53px auto 60px; scroll-margin-top:130px; }
+.rtc-resultado > h2 { text-align:center; }
+.rtc-resultado > .rtc-muted { text-align:center; margin-bottom:25px; }
+.rtc-indicadores { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:0 0 18px; }
+.rtc-indicador { background:white; border:1px solid #dce6f0; border-radius:13px; padding:23px 18px; text-align:center; min-width:0; }
+.rtc-indicador span,.rtc-indicador small { display:block; font-size:11px; color:#71839a; line-height:1.4; }
+.rtc-indicador strong { display:block; margin:8px 0; color:#0b3b91; font-size:clamp(19px,2.6vw,26px); overflow-wrap:anywhere; }
+.rtc-indicador:nth-child(2) { background:#0b3b91; border-color:#0b3b91; }
+.rtc-indicador:nth-child(2) strong { color:#ffd700; }
+.rtc-indicador:nth-child(2) span,.rtc-indicador:nth-child(2) small { color:#e6ecff; }
+.rtc-resultado-tabela,.rtc-teste,.rtc-notas { margin-top:18px; padding:24px; }
+.rtc-tabela-linha { display:flex; justify-content:space-between; gap:20px; border-top:1px solid #edf1f6; padding:13px 0; font-size:13px; }
+.rtc-tabela-linha strong { color:#0b3b91; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.rtc-tabela-total { font-weight:800; border-top:2px solid #c4d3e5; }
+.rtc-notas p { color:#607387; line-height:1.6; font-size:12px; }
+.rtc-teste { background:#f6faff; }
+.rtc-refazer { display:block; margin:28px auto 0; border:1px solid #0b3b91; background:transparent; color:#0b3b91; padding:12px 22px; border-radius:9px; font-weight:700; cursor:pointer; }
+.rtc-refazer:hover { background:#0b3b91; color:white; }
+.rtc-explicacao { margin:60px 0 36px; }
+.rtc-explicacao h2 { text-align:center; margin-bottom:26px; }
+.rtc-transicao { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:13px; }
+.rtc-transicao > div { background:white; border:1px solid #dce6f0; border-top:3px solid #0b3b91; border-radius:9px; padding:18px; }
+.rtc-transicao b { display:block; color:#0b3b91; font-size:16px; margin:0 0 9px; }
+.rtc-transicao span { font-size:12px; line-height:1.6; color:#657b92; }
+.rtc-aviso-legal { display:flex; align-items:flex-start; gap:13px; max-width:1030px; margin:35px auto 0; border-top:1px solid #d3dfec; padding:20px 8px; color:#63768a; }
+.rtc-aviso-legal > i { color:#0b3b91; }
+.rtc-aviso-legal strong { color:#0b3b91; font-size:12px; }
+.rtc-aviso-legal p { margin:6px 0; font-size:11px; line-height:1.65; }
+.rtc-aviso-legal a { color:#0b3b91; }
+@media (max-width:760px) { .rtc-indicadores,.rtc-transicao {grid-template-columns:repeat(2,minmax(0,1fr));} }
+@media (max-width:550px) { .rtc-pagina {width:94%;} .rtc-campos,.rtc-indicadores,.rtc-transicao {grid-template-columns:1fr;} .rtc-campo-inteiro {grid-column:auto;} .rtc-botao {width:100%; min-width:0;} .rtc-tabela-linha {flex-wrap:wrap; gap:8px;} }

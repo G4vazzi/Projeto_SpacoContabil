@@ -1,0 +1,156 @@
+{% extends "Config/base.html" %}
+
+{% block title %}Calculadora da Reforma Tributária{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/calculadora-reforma.css') }}">
+{% endblock %}
+
+{% block conteudo %}
+<main class="rtc-pagina">
+  <div class="rtc-intro">
+    <span class="rtc-tag">REFORMA TRIBUTÁRIA DO CONSUMO</span>
+    <h1>Calculadora da Reforma Tributária</h1>
+    <p>Compare uma estimativa dos tributos atuais com a transição da CBS e do IBS de 2026 a 2033. Informe as alíquotas que se aplicam ao seu cenário.</p>
+  </div>
+
+  <section class="rtc-card rtc-form-card" aria-labelledby="rtc-titulo-dados">
+    <h2 id="rtc-titulo-dados">Dados para simulação</h2>
+    <p class="rtc-muted">Versão inicial: operações gerais no regime regular. Não contempla Simples Nacional, Imposto Seletivo, IPI, regimes específicos nem benefícios ou reduções de alíquota.</p>
+
+    <div class="rtc-campos">
+      <div class="rtc-campo">
+        <label for="rtc-ano">Ano da simulação</label>
+        <select id="rtc-ano">
+          <option value="2026" selected>2026 — ano de teste</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+          <option value="2031">2031</option>
+          <option value="2032">2032</option>
+          <option value="2033">2033 — implantação integral</option>
+        </select>
+      </div>
+      <div class="rtc-campo">
+        <label for="rtc-operacao">Tipo de operação</label>
+        <select id="rtc-operacao">
+          <option value="servicos">Prestação de serviços (ISS)</option>
+          <option value="mercadorias">Venda de mercadorias (ICMS)</option>
+        </select>
+      </div>
+      <div class="rtc-campo">
+        <label for="rtc-periodo">Período dos valores</label>
+        <select id="rtc-periodo">
+          <option value="mensal">Mensal</option>
+          <option value="anual">Anual</option>
+        </select>
+      </div>
+      <div class="rtc-campo">
+        <label for="rtc-receita">Receita da operação (R$)</label>
+        <input id="rtc-receita" type="text" inputmode="decimal" placeholder="Ex.: 100.000,00" autocomplete="off">
+        <small>Base simplificada informada sem tributos embutidos; pressupõe operações tributáveis no regime geral.</small>
+      </div>
+    </div>
+
+    <div class="rtc-separador"></div>
+    <h3>Tributação atual — referência</h3>
+    <div class="rtc-campos">
+      <div class="rtc-campo">
+        <label for="rtc-pis">PIS + Cofins (%)</label>
+        <input id="rtc-pis" type="text" inputmode="decimal" value="3,65">
+        <small>Informe a alíquota conjunta da empresa; 3,65% é apenas um exemplo de regime cumulativo.</small>
+      </div>
+      <div class="rtc-campo">
+        <label id="rtc-label-local" for="rtc-local">ISS (%)</label>
+        <input id="rtc-local" type="text" inputmode="decimal" value="5,00">
+        <small id="rtc-hint-local">Informe a alíquota efetiva da operação conforme a legislação aplicável.</small>
+      </div>
+      <div class="rtc-campo">
+        <label for="rtc-credito-pis">Créditos atuais de PIS/Cofins (R$)</label>
+        <input id="rtc-credito-pis" type="text" inputmode="decimal" placeholder="0,00">
+        <small>Deixe vazio caso não haja direito a crédito.</small>
+      </div>
+      <div class="rtc-campo" id="rtc-grupo-icms">
+        <label for="rtc-credito-icms">Créditos atuais de ICMS (R$)</label>
+        <input id="rtc-credito-icms" type="text" inputmode="decimal" placeholder="0,00">
+        <small>Somente para operações sujeitas ao ICMS.</small>
+      </div>
+    </div>
+
+    <div class="rtc-separador"></div>
+    <h3>Hipóteses para os novos tributos</h3>
+    <p class="rtc-muted">Estas alíquotas <strong>não são valores oficiais pré-fixados</strong>. Informe uma hipótese de CBS e IBS integrais para fazer projeções de 2027 em diante. Em 2026 serão usadas apenas as alíquotas legais de teste.</p>
+    <div class="rtc-campos">
+      <div class="rtc-campo">
+        <label for="rtc-cbs">CBS integral hipotética (%)</label>
+        <input id="rtc-cbs" type="text" inputmode="decimal" placeholder="Informe sua hipótese">
+        <small>Em 2027–2028 o modelo aplica redução legal de 0,1 ponto percentual.</small>
+      </div>
+      <div class="rtc-campo">
+        <label for="rtc-ibs">IBS integral hipotético (%)</label>
+        <input id="rtc-ibs" type="text" inputmode="decimal" placeholder="Informe sua hipótese">
+        <small>Em 2027–2028 vale 0,1%; entre 2029 e 2032 aplica-se a fração de transição.</small>
+      </div>
+      <div class="rtc-campo rtc-campo-inteiro">
+        <label for="rtc-compras">Aquisições com crédito integral de IBS/CBS (R$)</label>
+        <input id="rtc-compras" type="text" inputmode="decimal" placeholder="0,00">
+        <small>Preencha somente a base de compras efetivamente elegíveis ao crédito, sob a hipótese de tributação pela mesma alíquota da operação.</small>
+      </div>
+    </div>
+
+    <p class="rtc-erro" id="rtc-erro" role="alert" hidden></p>
+    <button type="button" id="rtc-calcular" class="rtc-botao">CALCULAR E COMPARAR</button>
+  </section>
+
+  <section id="rtc-resultado" class="rtc-resultado" hidden aria-live="polite">
+    <h2>Resultado da simulação</h2>
+    <p id="rtc-resumo-ano" class="rtc-muted"></p>
+    <div class="rtc-indicadores">
+      <article class="rtc-indicador"><span>Referência: tributos atuais</span><strong id="rtc-atual-total">—</strong><small id="rtc-atual-pct">—</small></article>
+      <article class="rtc-indicador"><span>Simulação do ano</span><strong id="rtc-futuro-total">—</strong><small id="rtc-futuro-pct">—</small></article>
+      <article class="rtc-indicador"><span>Diferença simulada</span><strong id="rtc-diferenca">—</strong><small>Simulação − referência</small></article>
+    </div>
+    <div class="rtc-card rtc-resultado-tabela">
+      <h3>Composição estimada</h3>
+      <div class="rtc-tabela-linha"><span>PIS/Cofins remanescentes</span><strong id="rtc-l-pis">—</strong></div>
+      <div class="rtc-tabela-linha"><span id="rtc-l-local-nome">ISS remanescente</span><strong id="rtc-l-local">—</strong></div>
+      <div class="rtc-tabela-linha"><span>CBS projetada (líquida de créditos)</span><strong id="rtc-l-cbs">—</strong></div>
+      <div class="rtc-tabela-linha"><span>IBS projetado (líquido de créditos)</span><strong id="rtc-l-ibs">—</strong></div>
+      <div class="rtc-tabela-linha rtc-tabela-total"><span>Total simulado</span><strong id="rtc-l-total">—</strong></div>
+    </div>
+    <div class="rtc-card rtc-teste" id="rtc-teste" hidden>
+      <h3>2026: valores nominais do teste</h3>
+      <div class="rtc-tabela-linha"><span>CBS a 0,9% (antes de compensação/dispensa)</span><strong id="rtc-teste-cbs">—</strong></div>
+      <div class="rtc-tabela-linha"><span>IBS a 0,1% (antes de compensação/dispensa)</span><strong id="rtc-teste-ibs">—</strong></div>
+      <p class="rtc-muted">O teste não foi somado à carga atual nesta comparação. A dispensa do recolhimento e a compensação dependem dos requisitos legais e das obrigações acessórias. Não representa a apuração fiscal efetiva.</p>
+    </div>
+    <div class="rtc-card rtc-notas">
+      <h3>Premissas usadas</h3>
+      <p id="rtc-premissas"></p>
+      <p>Simulação simplificada: não reproduz o cálculo legal de cada documento fiscal, bases de cálculo “por dentro” e “por fora”, regimes especiais, crédito presumido, regras de aproveitamento/estorno de créditos, ajustes entre operações, benefícios, regras estaduais ou municipais. Não serve como guia de pagamento de tributos.</p>
+    </div>
+    <button type="button" id="rtc-refazer" class="rtc-refazer">ALTERAR OS DADOS</button>
+  </section>
+
+  <section class="rtc-explicacao">
+    <h2>Como acontece a transição?</h2>
+    <div class="rtc-transicao">
+      <div><b>2026</b><span>Ano de teste: CBS 0,9% e IBS 0,1%</span></div>
+      <div><b>2027–28</b><span>CBS substitui PIS/Cofins; IBS 0,1%</span></div>
+      <div><b>2029–32</b><span>IBS aumenta de 10% a 40% da referência, com redução gradual de ICMS/ISS</span></div>
+      <div><b>2033</b><span>IBS integral, sem ICMS/ISS</span></div>
+    </div>
+  </section>
+
+  <section class="rtc-aviso-legal">
+    <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+    <div>
+      <strong>Legislação de referência: 2026</strong>
+      <p>Modelo ilustrativo baseado na EC nº 132/2023, na LC nº 214/2025 e alterações posteriores, incluindo a LC nº 227/2026. As alíquotas futuras informadas pelo usuário são hipóteses de simulação, não taxas oficiais.</p>
+      <p>Fontes: <a href="https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/reforma-tributaria-do-consumo/entenda" target="_blank" rel="noopener noreferrer">Receita Federal</a> e <a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214compilado.htm" target="_blank" rel="noopener noreferrer">legislação compilada</a>.</p>
+    </div>
+  </section>
+</main>
+<script src="{{ url_for('static', filename='js/calculadora-reforma.js') }}?v=1"></script>
+{% endblock %}

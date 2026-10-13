@@ -72,7 +72,7 @@ def calculadoraRPA():
 def calculadoraReformaTributaria():
 
     return render_template(
-        'Tools/calculadorareforma'
+        'Tools/calculadoraReformaTributaria.html'
     )
 
 
@@ -223,8 +223,8 @@ def api_iss():
 
 
     # =========================================================
-# DEBUG - BASE ISS
-# =========================================================
+    # DEBUG - BASE ISS
+    # =========================================================
 
 @tools_bp.get('/api/iss/debug/<municipio>')
 def api_iss_debug(municipio):

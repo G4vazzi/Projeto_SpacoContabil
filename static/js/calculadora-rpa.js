@@ -485,7 +485,119 @@
 
         resultado.classList.remove('rpa-hidden');
         resultado.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        /* =================================================
+        DADOS UTILIZADOS NO CÁLCULO
+        ================================================= */
+
+        const municipioCompleto =
+            municipioNome +
+            " - " +
+            uf.value;
+
+
+        const codigoServico =
+            servico.value;
+
+
+        /* Competência 2026-09 -> 09/2026 */
+
+        const partesCompetencia =
+            competencia.value.split("-");
+
+
+        let competenciaFormatada =
+            competencia.value;
+
+
+        if (
+            partesCompetencia.length === 2
+        ) {
+
+            competenciaFormatada =
+                partesCompetencia[1] +
+                "/" +
+                partesCompetencia[0];
+
+        }
+
+
+        /* Município */
+
+        preencher(
+            "rpa-dado-municipio",
+            municipioCompleto
+        );
+
+
+        /* Serviço */
+
+        preencher(
+            "rpa-dado-servico",
+            servicoNome
+        );
+
+
+        /* Código */
+
+        preencher(
+            "rpa-dado-codigo",
+            codigoServico
+        );
+
+
+        /* ISS */
+
+        preencher(
+            "rpa-dado-iss",
+            aplicarISS.value === "nao"
+                ? "Não aplicado"
+                : formatarPercentual(
+                    iss.aliquota
+                )
+        );
+
+
+        /* Competência */
+
+        preencher(
+            "rpa-dado-competencia",
+            competenciaFormatada
+        );
+
+
+        /* Origem */
+
+        preencher(
+            "rpa-dado-origem",
+            iss.origem
+        );
+
+
+        /* Fonte */
+
+        let fonteISS =
+            "Alíquota informada manualmente";
+
+
+        if (
+            dadosISSAtual &&
+            dadosISSAtual.fonte
+        ) {
+
+            fonteISS =
+                dadosISSAtual.fonte;
+
+        }
+
+
+        preencher(
+            "rpa-dado-fonte",
+            fonteISS
+        );
     }
+
+
 
     uf.addEventListener('change', carregarMunicipios);
     municipio.addEventListener('change', consultarISS);

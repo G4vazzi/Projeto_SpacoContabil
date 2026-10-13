@@ -1,0 +1,161 @@
+<!-- FORMULÁRIO DE CONTATO -->
+
+<div
+    id="spc-contato-overlay"
+    class="spc-contato-overlay"
+    hidden
+>
+
+    <section
+        class="spc-contato-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="spc-contato-titulo"
+        tabindex="-1"
+    >
+
+        <!-- FECHAR -->
+        <button
+            type="button"
+            id="spc-contato-fechar"
+            class="spc-contato-fechar"
+            aria-label="Fechar formulário"
+        >
+            &times;
+        </button>
+
+
+        <!-- TÍTULO -->
+        <span class="spc-contato-tag">
+            FALE COM A SPACO
+        </span>
+
+        <h2 id="spc-contato-titulo">
+            Vamos conversar?
+        </h2>
+
+        <p class="spc-contato-intro">
+            Preencha seus dados e nossa equipe
+            entrará em contato.
+        </p>
+
+
+        <!-- FORMULÁRIO -->
+        <form id="spc-contato-form" novalidate>
+
+
+            <!-- NOME -->
+            <label for="spc-nome">
+                Nome completo
+            </label>
+
+            <input
+                type="text"
+                id="spc-nome"
+                name="nome"
+                placeholder="Seu nome"
+                minlength="3"
+                maxlength="100"
+                autocomplete="name"
+                required
+            >
+
+
+            <!-- TELEFONE -->
+            <label for="spc-telefone">
+                Telefone / WhatsApp
+            </label>
+
+            <input
+                type="tel"
+                id="spc-telefone"
+                name="telefone"
+                placeholder="(19) 99999-9999"
+                maxlength="22"
+                autocomplete="tel"
+                required
+            >
+
+
+            <!-- EMAIL -->
+            <label for="spc-email">
+                E-mail
+            </label>
+
+            <input
+                type="email"
+                id="spc-email"
+                name="email"
+                placeholder="exemplo@email.com"
+                maxlength="254"
+                autocomplete="email"
+                required
+            >
+
+
+            <!-- PROTEÇÃO CONTRA SPAM -->
+            <div
+                class="spc-contato-honeypot"
+                aria-hidden="true"
+            >
+                <label for="spc-empresa-web">
+                    Não preencha este campo
+                </label>
+
+                <input
+                    type="text"
+                    id="spc-empresa-web"
+                    name="website"
+                    autocomplete="off"
+                    tabindex="-1"
+                >
+            </div>
+
+
+            <!-- AUTORIZAÇÃO -->
+            <label class="spc-contato-privacidade">
+
+                <input
+                    type="checkbox"
+                    id="spc-aceite"
+                    name="aceite"
+                    required
+                >
+
+                <span>
+                    Autorizo a SpacoContábil a utilizar
+                    meus dados para responder à minha
+                    solicitação e enviar uma confirmação
+                    por e-mail.
+                </span>
+
+            </label>
+
+
+            <!-- MENSAGEM -->
+            <p
+                id="spc-contato-status"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+
+            <!-- ENVIAR -->
+            <button
+                type="submit"
+                id="spc-contato-enviar"
+                class="spc-contato-enviar"
+            >
+                Solicitar contato
+            </button>
+
+        </form>
+
+    </section>
+
+</div>
+
+<script
+    defer
+    src="{{ url_for('static', filename='js/contato.js') }}"
+></script>

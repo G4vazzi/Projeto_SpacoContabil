@@ -1,0 +1,284 @@
+
+/* =========================================
+   FORMULÁRIO DE CONTATO - SPACO CONTÁBIL
+========================================= */
+
+/* BLOQUEAR ROLAGEM COM MODAL ABERTO */
+
+body.spc-modal-aberto {
+    overflow: hidden;
+}
+
+/* FUNDO ESCURO */
+
+.spc-contato-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(0, 15, 40, 0.70);
+    backdrop-filter: blur(5px);
+
+    overflow-y: auto;
+}
+
+/* NÃO MOSTRAR O MODAL ESCONDIDO */
+
+.spc-contato-overlay[hidden] {
+    display: none !important;
+}
+
+/* CAIXA PRINCIPAL */
+
+.spc-contato-modal {
+    position: relative;
+
+    width: 100%;
+    max-width: 490px;
+    max-height: calc(100dvh - 40px);
+
+    margin: auto;
+    padding: 35px;
+
+    background: #FFFFFF;
+    border-radius: 18px;
+
+    box-shadow: 0 20px 65px rgba(0, 0, 0, 0.25);
+
+    overflow-y: auto;
+}
+
+/* FECHAR */
+
+.spc-contato-fechar {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #F1F5F9;
+    color: #243B53;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.spc-contato-fechar:hover {
+    background: #E2E8F0;
+    color: #0B3B91;
+}
+
+/* TEXTO SUPERIOR */
+
+.spc-contato-tag {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #0B3B91;
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+/* TÍTULO */
+
+.spc-contato-modal h2 {
+    margin: 0 0 10px;
+
+    color: #0B3B91;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+/* DESCRIÇÃO */
+
+.spc-contato-intro {
+    margin-bottom: 25px;
+
+    color: #66758A;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* FORMULÁRIO */
+
+#spc-contato-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LABEL DOS CAMPOS */
+
+#spc-contato-form > label:not(.spc-contato-privacidade) {
+    margin-bottom: 7px;
+
+    color: #25354A;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* INPUTS */
+
+#spc-contato-form > input {
+    width: 100%;
+    height: 46px;
+
+    margin-bottom: 18px;
+    padding: 0 14px;
+
+    border: 1px solid #D7E0EC;
+    border-radius: 9px;
+
+    background: #F8FAFD;
+
+    color: #243B53;
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: 0.2s;
+}
+
+/* INPUT SELECIONADO */
+
+#spc-contato-form > input:focus {
+    border-color: #0B3B91;
+    background: #FFFFFF;
+
+    box-shadow: 0 0 0 3px rgba(11, 59, 145, 0.10);
+}
+
+#spc-contato-form > input::placeholder {
+    color: #9AA8B8;
+}
+
+/* AUTORIZAÇÃO */
+
+.spc-contato-privacidade {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin: 3px 0 15px;
+
+    color: #5E6D80;
+    font-size: 12px;
+    line-height: 1.5;
+
+    cursor: pointer;
+}
+
+.spc-contato-privacidade input {
+    margin-top: 3px;
+
+    accent-color: #0B3B91;
+    cursor: pointer;
+}
+
+/* STATUS */
+
+#spc-contato-status {
+    margin: 0 0 12px;
+
+    color: #B45309;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#spc-contato-status:empty {
+    display: none;
+}
+
+/* BOTÃO ENVIAR */
+
+.spc-contato-enviar {
+    width: 100%;
+    min-height: 48px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #0B3B91;
+    color: #FFFFFF;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.spc-contato-enviar:hover {
+    background: #092E72;
+    transform: translateY(-1px);
+}
+
+.spc-contato-enviar:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+/* ACESSIBILIDADE */
+
+.spc-contato-fechar:focus-visible,
+.spc-contato-enviar:focus-visible {
+    outline: 3px solid #FFD700;
+    outline-offset: 3px;
+}
+
+/* CAMPO INVISÍVEL ANTISPAM */
+
+.spc-contato-honeypot {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+
+    .spc-contato-overlay {
+        padding: 12px;
+    }
+
+    .spc-contato-modal {
+        padding: 28px 20px;
+
+        max-height: calc(100dvh - 24px);
+
+        border-radius: 14px;
+    }
+
+    .spc-contato-modal h2 {
+        font-size: 25px;
+    }
+
+    .spc-contato-intro {
+        font-size: 13px;
+    }
+}

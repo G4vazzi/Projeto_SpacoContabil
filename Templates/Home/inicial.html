@@ -1,5 +1,14 @@
 {% extends "Config/base.html" %}
 
+{% block css %}
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/contato.css') }}"
+>
+
+{% endblock %}
+
 {% block conteudo %}
 
 <section class="hero">
@@ -39,8 +48,8 @@
         </ul>
 
         <nav class="hero-menu">
-            <a href="#" class="hero-menu-item">Comece já!</a>
-            <a href="#" class="hero-menu-item">Entre em contato</a>
+            <a href="#servicos" class="hero-menu-item">Comece já!</a>
+            <a href="#spc-contato-overlay" data-abrir-contato class="hero-menu-item">Entre em contato</a>
         </nav>
 
     </div>
@@ -183,7 +192,7 @@
      SERVIÇOS
 ========================= -->
 
-<section class="servicos">
+<section class="servicos" id="servicos">
 
     <div class="servicos-titulo">
         <h2>Serviços de contabilidade</h2>
@@ -692,5 +701,8 @@
     </div>
 
 </section>
+
+<!-- Formulario de Contato -->
+{% include 'Includes/contato_modal.html' %}
 
 {% endblock %}
