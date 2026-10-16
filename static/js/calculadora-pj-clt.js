@@ -1032,4 +1032,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-});
+})

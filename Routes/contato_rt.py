@@ -6,10 +6,7 @@ from flask import (
 )
 
 import os
-import smtplib
-
-from email.message import EmailMessage
-
+import requests
 import sqlite3
 import re
 
@@ -215,7 +212,7 @@ def salvar_contato(
     return contato_id
 
 # =========================================================
-# EMAIL DE CONFIRMAÇÃO
+# EMAIL DE CONFIRMAÇÃO - RESEND
 # =========================================================
 
 def enviar_email_confirmacao(
@@ -224,81 +221,39 @@ def enviar_email_confirmacao(
     contato_id
 ):
 
-    smtp_host = os.getenv("SMTP_HOST")
-    smtp_port = int(
-        os.getenv("SMTP_PORT", "465")
-    )
+    # =====================================================
+    # CONFIGURAÇÕES
+    # =====================================================
 
-    smtp_user = os.getenv("SMTP_USER")
-    smtp_password = os.getenv(
-        "SMTP_PASSWORD"
-    )
+    api_key = os.getenv(
+        "RESEND_API_KEY",
+        ""
+    ).strip()
 
-    smtp_from = os.getenv(
-        "SMTP_FROM",
-        smtp_user
-    )
-
-    smtp_from_name = os.getenv(
-        "SMTP_FROM_NAME",
-        "Spaco Contábil"
-    )
+    email_from = os.getenv(
+        "EMAIL_FROM",
+        "Spaco Contábil <auto@spacocontabil.com.br>"
+    ).strip()
 
 
-    if not all([
-        smtp_host,
-        smtp_user,
-        smtp_password,
-        smtp_from,
-    ]):
+    # =====================================================
+    # VERIFICAR CONFIGURAÇÃO
+    # =====================================================
+
+    if not api_key:
 
         current_app.logger.warning(
-            "SMTP não configurado."
+            "RESEND_API_KEY não configurada."
         )
 
         return False
 
 
-    mensagem = EmailMessage()
+    # =====================================================
+    # CORPO HTML
+    # =====================================================
 
-
-    mensagem["Subject"] = (
-        "Recebemos sua solicitação | "
-        "Spaco Contábil"
-    )
-
-    mensagem["From"] = (
-        f"{smtp_from_name} <{smtp_from}>"
-    )
-
-    mensagem["To"] = email
-
-
-    # TEXTO SIMPLES
-
-    mensagem.set_content(
-    f"""
-    Olá, {nome}!
-
-    Recebemos sua solicitação de contato com sucesso.
-
-    Nossa equipe entrará em contato com você em breve.
-
-    Protocolo: #{contato_id}
-
-    Atenciosamente,
-    Spaco Contábil
-
-    Esta é uma mensagem automática.
-    Por favor, não responda este e-mail.
-    """
-    )
-
-
-    # HTML
-
-    mensagem.add_alternative(
-        f"""
+    html_email = f"""
 <!DOCTYPE html>
 
 <html lang="pt-BR">
@@ -306,8 +261,9 @@ def enviar_email_confirmacao(
 <body
     style="
         margin: 0;
+        padding: 0;
         background: #F4F7FB;
-        font-family: Arial, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
     "
 >
 
@@ -315,7 +271,7 @@ def enviar_email_confirmacao(
         style="
             max-width: 600px;
             margin: 30px auto;
-            background: white;
+            background: #FFFFFF;
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid #E4EAF2;
@@ -333,7 +289,7 @@ def enviar_email_confirmacao(
             <h1
                 style="
                     margin: 0;
-                    color: white;
+                    color: #FFFFFF;
                     font-size: 24px;
                 "
             >
@@ -365,8 +321,8 @@ def enviar_email_confirmacao(
                     line-height: 1.7;
                 "
             >
-                Recebemos sua solicitação
-                de contato com sucesso.
+                Recebemos sua solicitação de contato
+                com sucesso.
             </p>
 
 
@@ -375,8 +331,8 @@ def enviar_email_confirmacao(
                     line-height: 1.7;
                 "
             >
-                Nossa equipe entrará em contato
-                com você em breve.
+                Nossa equipe recebeu seus dados e
+                entrará em contato com você em breve.
             </p>
 
 
@@ -395,7 +351,7 @@ def enviar_email_confirmacao(
                         color: #0B3B91;
                     "
                 >
-                    Protocolo
+                    Protocolo da solicitação
                 </strong>
 
                 <br>
@@ -405,7 +361,11 @@ def enviar_email_confirmacao(
             </div>
 
 
-            <p>
+            <p
+                style="
+                    margin-top: 30px;
+                "
+            >
                 Atenciosamente,<br>
 
                 <strong>
@@ -414,6 +374,7 @@ def enviar_email_confirmacao(
             </p>
 
         </div>
+
 
         <div
             style="
@@ -424,10 +385,14 @@ def enviar_email_confirmacao(
                 color: #64748B;
                 font-size: 12px;
                 line-height: 1.6;
-            ">
-            
-            Este é um e-mail automático.<br>
-            Por favor, não responda esta mensagem.
+            "
+        >
+
+            Esta é uma mensagem automática enviada
+            pela Spaco Contábil.<br>
+
+            Por favor, não responda este e-mail.
+
         </div>
 
     </div>
@@ -435,42 +400,113 @@ def enviar_email_confirmacao(
 </body>
 
 </html>
-""",
-        subtype="html"
-    )
+"""
 
+
+    # =====================================================
+    # CORPO TEXTO SIMPLES
+    # =====================================================
+
+    texto_email = f"""
+Olá, {nome}!
+
+Recebemos sua solicitação de contato com sucesso.
+
+Nossa equipe recebeu seus dados e entrará em contato
+com você em breve.
+
+Protocolo da solicitação: #{contato_id}
+
+Atenciosamente,
+Spaco Contábil
+
+Esta é uma mensagem automática.
+Por favor, não responda este e-mail.
+"""
+
+
+    # =====================================================
+    # DADOS PARA RESEND
+    # =====================================================
+
+    dados_email = {
+
+        "from": email_from,
+
+        "to": [
+            email
+        ],
+
+        "subject":
+            "Recebemos sua solicitação | Spaco Contábil",
+
+        "html":
+            html_email,
+
+        "text":
+            texto_email,
+
+    }
+
+
+    # =====================================================
+    # ENVIAR PELA API
+    # =====================================================
 
     try:
 
-        with smtplib.SMTP_SSL(
-            smtp_host,
-            smtp_port,
-            timeout=20
-        ) as servidor:
+        resposta = requests.post(
 
-            servidor.login(
-                smtp_user,
-                smtp_password
-            )
+            "https://api.resend.com/emails",
 
-            servidor.send_message(
-                mensagem
-            )
+            headers={
 
+                "Authorization":
+                    f"Bearer {api_key}",
 
-        current_app.logger.info(
-            "E-mail enviado para %s",
-            email
+                "Content-Type":
+                    "application/json",
+
+            },
+
+            json=dados_email,
+
+            timeout=20,
+
         )
 
 
-        return True
+        # =================================================
+        # VERIFICAR RESPOSTA
+        # =================================================
+
+        if resposta.ok:
+
+            resultado = resposta.json()
+
+            current_app.logger.info(
+                "E-mail enviado pelo Resend "
+                "para %s. ID: %s",
+                email,
+                resultado.get("id")
+            )
+
+            return True
 
 
-    except Exception as erro:
+        current_app.logger.error(
+            "Erro Resend. Status: %s | Resposta: %s",
+            resposta.status_code,
+            resposta.text
+        )
+
+        return False
+
+
+    except requests.RequestException as erro:
 
         current_app.logger.exception(
-            "Erro ao enviar e-mail: %s",
+            "Erro de conexão com Resend: %s",
             erro
         )
 
@@ -515,10 +551,14 @@ def receber_contato():
 
                 "ok": True,
 
+                "id": contato_id,
+
+                "email_enviado": email_enviado,
+
                 "mensagem":
                     "Solicitação registrada."
 
-            })
+            }),201
 
 
         # =================================================
